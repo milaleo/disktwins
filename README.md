@@ -16,6 +16,10 @@
   You should have received a copy of the GNU General Public License along
   with GEMINUS. If not, see <https://www.gnu.org/licenses/>.
 
+  Additional terms under section 7 of the GNU General Public License,
+  version 3, apply to GEMINUS: see LICENSE-EXCEPTION.txt and
+  LICENSE-ADDITIONAL-TERMS.txt.
+
   SPDX-License-Identifier: GPL-3.0-or-later
 -->
 # DiskTwins
@@ -64,6 +68,8 @@ DiskTwins, the original project, is an open source project born from a personal 
 Ready-made packages are on the [releases page](https://github.com/milaleo/disktwins/releases) of this repository.
 
 
+The only official GEMINUS packages are the ones published by `lucixdev` ([Codeberg](https://codeberg.org/lucixdev/geminus/releases) or [GitHub](https://github.com/lucixdev/geminus/releases)). DiskTwins is a modified version, not published by the original author, and it is not official.
+
 **On Linux** — three formats, take the one you need: **AppImage** (a single file: make it executable and run it, nothing to install), a **`.deb`** package for Debian and derivatives, an **`.rpm`** package for Fedora.
 
 **On Windows** — an installer: open it, click through to the end, and DiskTwins lands in the start menu. It needs Windows 10 22H2 or later, 64 bit. If the machine is missing the system component used to draw the interface, the installation adds it.
@@ -98,6 +104,10 @@ DiskTwins is free software under the [GNU GPL, version 3 or later](https://www.g
 WebView2 runtime, which is not free software: `LICENSE-EXCEPTION.txt` grants the
 additional permission that allows linking against it. Software written by others
 and shipped together with DiskTwins is listed in `THIRD-PARTY-NOTICES.txt`.
+
+DiskTwins is a modified version of GEMINUS and follows the additional terms in
+`LICENSE-ADDITIONAL-TERMS.txt` (unchanged): its own name, icon, publisher and application
+identifier, and a notice saying it is not the author's.
 
 ---
 ---
@@ -144,6 +154,8 @@ DiskTwins, il progetto originale, è un progetto open source nato da un'esigenza
 I pacchetti pronti stanno nella [pagina dei rilasci](https://github.com/milaleo/disktwins/releases) di questo repository.
 
 
+I soli pacchetti ufficiali di GEMINUS sono quelli pubblicati da `lucixdev` ([Codeberg](https://codeberg.org/lucixdev/geminus/releases) o [GitHub](https://github.com/lucixdev/geminus/releases)). DiskTwins è una versione modificata, non pubblicata dall'autore originale, e non è ufficiale.
+
 **Su Linux** — tre formati, scegli quello che ti serve: **AppImage** (un file solo: lo rendi eseguibile e lo lanci, senza installare niente), pacchetto **`.deb`** per Debian e derivate, pacchetto **`.rpm`** per Fedora.
 
 **Su Windows** — un programma di installazione: lo apri, vai avanti fino alla fine, e DiskTwins finisce nel menu di avvio. Serve Windows 10 22H2 o successivo, a 64 bit. Se al computer manca il componente di sistema che serve a mostrare l'interfaccia, l'installazione lo aggiunge da sé.
@@ -176,3 +188,7 @@ DiskTwins è software libero sotto [GNU GPL, versione 3 o successive](https://ww
 WebView2, che non è software libero: `LICENSE-EXCEPTION.txt` concede il permesso
 aggiuntivo che ne autorizza il collegamento. Il software scritto da altri e
 distribuito insieme a DiskTwins è elencato in `THIRD-PARTY-NOTICES.txt`.
+
+DiskTwins è una versione modificata di GEMINUS e rispetta i termini aggiuntivi di
+`LICENSE-ADDITIONAL-TERMS.txt` (invariati): nome, icona, editore e identificativo sono
+propri, e questo avviso dice che non è dell'autore.
