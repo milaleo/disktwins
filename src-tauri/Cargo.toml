@@ -22,10 +22,10 @@
 # SPDX-License-Identifier: GPL-3.0-or-later
 
 [package]
-name = "geminus"
-version = "1.1.0"
-description = "Desktop application for comparing two disks or folders"
-authors = ["lucix.dev <lucix.dev@proton.me>"]
+name = "disktwins"
+version = "0.1.0"
+description = "Desktop application for comparing two disks or folders (modified version of GEMINUS by lucixdev)"
+authors = ["lucix.dev <lucix.dev@proton.me> (GEMINUS)", "milaleo (modifications)"]
 license = "GPL-3.0-or-later"
 edition = "2021"
 rust-version = "1.88"

@@ -78,7 +78,7 @@ fn private_dir() -> Result<PathBuf, CmdError> {
         .unwrap_or_else(|| {
             PathBuf::from(std::env::var("HOME").unwrap_or_else(|_| ".".to_string())).join(".cache")
         });
-    let dir = base.join("geminus");
+    let dir = base.join("disktwins");
     fs::create_dir_all(&dir).map_err(|e| CmdError::from_io("diagnosis_failed", &e))?;
     let _ = fs::set_permissions(&dir, fs::Permissions::from_mode(0o700));
     sweep_stale(&dir);
@@ -332,7 +332,7 @@ fn save_report(
     } else {
         "unknown".to_string()
     };
-    let file = dir.join(format!("geminus_health_{}_{}.txt", label, stamp));
+    let file = dir.join(format!("disktwins_health_{}_{}.txt", label, stamp));
     let text = format!("{}\n\n{}", header.replace("{date}", when), body);
     fs::write(&file, text).map_err(|e| CmdError::from_io("report_not_saved", &e))?;
     Ok(file.to_string_lossy().into_owned())

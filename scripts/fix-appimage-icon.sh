@@ -22,7 +22,7 @@
 #
 # SPDX-License-Identifier: GPL-3.0-or-later
 
-# Post-build patch of the geminus AppImage (tauri-bundler 2.10.x). Four fixes in
+# Post-build patch of the disktwins AppImage (tauri-bundler 2.10.x). Four fixes in
 # a single extract/repack cycle:
 #
 #   1) Bundle libgpg-error.so.0. linuxdeploy leaves it out as a "system library"
@@ -98,7 +98,7 @@ APPIMAGE_NAME=$(basename "$APPIMAGE")
 echo "    AppImage: $APPIMAGE_NAME"
 
 # --- Get appimagetool ---
-TOOLDIR="$HOME/.cache/geminus-build"
+TOOLDIR="$HOME/.cache/disktwins-build"
 APPIMAGETOOL="$TOOLDIR/appimagetool-${APPIMAGETOOL_VERSION}-x86_64.AppImage"
 if [ ! -x "$APPIMAGETOOL" ]; then
   mkdir -p "$TOOLDIR"
@@ -114,7 +114,7 @@ if ! echo "$APPIMAGETOOL_SHA256  $APPIMAGETOOL" | sha256sum -c --status; then
 fi
 
 # --- Extract AppImage into a temp directory ---
-WORKDIR=$(mktemp -d -t geminus-appimage-fix-XXXXXX)
+WORKDIR=$(mktemp -d -t disktwins-appimage-fix-XXXXXX)
 trap 'rm -rf "$WORKDIR"' EXIT
 
 echo ">>> Extracting AppImage into $WORKDIR..."
@@ -145,7 +145,7 @@ else
   echo "    .DirIcon now: $CURRENT_TARGET"
   if [[ "$CURRENT_TARGET" == /* ]]; then
     echo ">>> Patching the .DirIcon symlink (it was absolute)..."
-    (cd squashfs-root && rm -f .DirIcon && ln -s usr/share/icons/hicolor/256x256/apps/geminus.png .DirIcon)
+    (cd squashfs-root && rm -f .DirIcon && ln -s usr/share/icons/hicolor/256x256/apps/disktwins.png .DirIcon)
     echo "    .DirIcon new: $(readlink squashfs-root/.DirIcon)"
     CHANGED=1
   else

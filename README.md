@@ -22,19 +22,23 @@
 
   SPDX-License-Identifier: GPL-3.0-or-later
 -->
-# GEMINUS
+# DiskTwins
+
+> **Modified version of GEMINUS.** DiskTwins is a modified version of **GEMINUS** by **lucixdev** ([original project](https://codeberg.org/lucixdev/geminus)). It is **not** the original program and is **not** published or approved by its author. Changes made in 2026 by milaleo (Windows 11 look, Recycle Bin, shortcuts, favourites, scheduler, Explorer integration). Licence unchanged: GNU GPL v3 or later. The name GEMINUS and its logo belong to the original project.
+
+> **Versione modificata di GEMINUS.** DiskTwins è una versione modificata di **GEMINUS** di **lucixdev** ([progetto originale](https://codeberg.org/lucixdev/geminus)). **Non** è il programma originale e **non** è pubblicata né approvata dall'autore. Modifiche del 2026 di milaleo (aspetto Windows 11, Cestino, scorciatoie, preferiti, pianificazione, integrazione con Esplora file). Licenza invariata: GNU GPL v3 o successive. Il nome GEMINUS e il suo logo appartengono al progetto originale.
 
 Compare two disks or folders on Linux and Windows — find differences, copy, move, and delete files.
 
 ---
 
-## GEMINUS — Castore e Polluce
+## The idea
 
-A NAS costs money, and it has to be kept running. Two external drives cost far less and ask for nothing. GEMINUS was born from this simple idea: one working drive and one backup drive, brought in line when you decide, with no dedicated hardware and no system to administer. GEMINUS is not a NAS — it is a tool for those who want to know exactly what has changed between two drives or folders, and act accordingly.
+A NAS costs money, and it has to be kept running. Two external drives cost far less and ask for nothing. DiskTwins, the original project, was born from this simple idea: one working drive and one backup drive, brought in line when you decide, with no dedicated hardware and no system to administer. DiskTwins is not a NAS — it is a tool for those who want to know exactly what has changed between two drives or folders, and act accordingly.
 
-Choose two paths. GEMINUS compares them file by file. You see the differences. You copy, move, or delete what you want.
+Choose two paths. DiskTwins compares them file by file. You see the differences. You copy, move, or delete what you want.
 
-When you start a comparison, GEMINUS asks how you want to do it. Three methods, three levels of thoroughness:
+When you start a comparison, DiskTwins asks how you want to do it. Three methods, three levels of thoroughness:
 
 - **Quick** looks at file names, sizes and dates. Fast, but doesn't tell you if the contents differ.
 - **Deep** also reads the contents, to be sure files that look identical really are. Slow, but reliable.
@@ -42,21 +46,33 @@ When you start a comparison, GEMINUS asks how you want to do it. Three methods, 
 
 You pick the method that fits the moment. Everyday sync? Quick. Important backup? Deep. Doubts about an old USB drive? Full.
 
-When it encounters an unreadable file on a damaged drive, GEMINUS does not stop — it marks it with a warning and completes the comparison. You know exactly what could not be read.
+When it encounters an unreadable file on a damaged drive, DiskTwins does not stop — it marks it with a warning and completes the comparison. You know exactly what could not be read.
 
-GEMINUS is an open source project born from a personal need. Anyone can contribute — with the same practical spirit with which it was built.
+DiskTwins, the original project, is an open source project born from a personal need. Anyone can contribute — with the same practical spirit with which it was built.
+
+---
+
+## What you can do
+
+- **See the differences** — two folders side by side: only in A, only in B, modified, identical, unreadable. Columns for name, date modified, type and size, sortable with a click.
+- **Copy, move, delete** — drag between the two sides (Ctrl = copy, Shift = move), or use the right-click menu and Ctrl+C / Ctrl+X / Ctrl+V. Deleted files go to the Recycle Bin (Shift+Delete deletes for good). F2 renames.
+- **Windows 11 look** — Segoe UI, system light/dark theme and accent colour, an Explorer-style folder picker with address bar and side pane.
+- **Remember** — the last two folders come back at start-up, and favourites (★) keep your usual A ↔ B pairs.
+- **Schedule** — tasks with rules for each kind of difference (copy A → B, B → A, the newer one wins, do nothing) that run while DiskTwins is open. They never delete anything and skip the run if the drive is not the one saved.
+- **From Explorer** — on Windows the installer adds "Set as Disk A / Disk B in DiskTwins" to the right-click menu of folders and drives.
 
 ---
 
 ## Installation
 
-Ready-made packages are on the releases page — [Codeberg](https://codeberg.org/lucixdev/geminus/releases) or [GitHub](https://github.com/lucixdev/geminus/releases). GEMINUS lives in both places: Codeberg is home, GitHub is its mirror, and the two carry the same code.
+Ready-made packages are on the [releases page](https://github.com/milaleo/disktwins/releases) of this repository.
 
-The only official packages are the ones published by `lucixdev` on these two pages. GEMINUS is free software, so anyone may publish a modified version: those builds are not mine, and I cannot answer for what they do.
+
+The only official GEMINUS packages are the ones published by `lucixdev` ([Codeberg](https://codeberg.org/lucixdev/geminus/releases) or [GitHub](https://github.com/lucixdev/geminus/releases)). DiskTwins is a modified version, not published by the original author, and it is not official.
 
 **On Linux** — three formats, take the one you need: **AppImage** (a single file: make it executable and run it, nothing to install), a **`.deb`** package for Debian and derivatives, an **`.rpm`** package for Fedora.
 
-**On Windows** — an installer: open it, click through to the end, and GEMINUS lands in the start menu. It needs Windows 10 22H2 or later, 64 bit. If the machine is missing the system component used to draw the interface, the installation adds it.
+**On Windows** — an installer: open it, click through to the end, and DiskTwins lands in the start menu. It needs Windows 10 22H2 or later, 64 bit. If the machine is missing the system component used to draw the interface, the installation adds it.
 
 The installer is not signed, so Windows shows a security warning before opening it: that is expected, and you get past it by choosing to proceed. A certificate costs money every year, and this is one person's project.
 
@@ -64,48 +80,51 @@ The installer is not signed, so Windows shows a security warning before opening 
 
 ## Manual
 
-Everything GEMINUS does, step by step, in English and Italian: [`MANUAL.md`](MANUAL.md).
+Everything DiskTwins does, step by step, in English and Italian: [`MANUAL.md`](MANUAL.md).
 
 ---
 
 ## Screenshots
 
-![GEMINUS dark theme, English](screenshots/screenshot-dark-en.png)
-![GEMINUS light theme, English](screenshots/screenshot-light-en.png)
+![DiskTwins dark theme, English](screenshots/screenshot-dark-en.png)
+![DiskTwins light theme, English](screenshots/screenshot-light-en.png)
+![Folder picker, English](screenshots/screenshot-picker-en.png)
+![Schedule, English](screenshots/screenshot-schedule-en.png)
 
 ---
 
 ## License
 
-Copyright (C) 2026 lucix.dev <lucix.dev@proton.me>
+Copyright (C) 2026 lucix.dev <lucix.dev@proton.me> (GEMINUS)
 
-GEMINUS is free software under the [GNU GPL, version 3 or later](https://www.gnu.org/licenses/gpl-3.0.html)
+Modifications Copyright (C) 2026 milaleo
+
+DiskTwins is free software under the [GNU GPL, version 3 or later](https://www.gnu.org/licenses/gpl-3.0.html)
 — see `LICENSE`. On Windows the interface is rendered by the Microsoft Edge
 WebView2 runtime, which is not free software: `LICENSE-EXCEPTION.txt` grants the
 additional permission that allows linking against it. Software written by others
-and shipped together with GEMINUS is listed in `THIRD-PARTY-NOTICES.txt`.
+and shipped together with DiskTwins is listed in `THIRD-PARTY-NOTICES.txt`.
 
-Anyone may modify GEMINUS and publish the result, but a modified version must be
-told apart from the original: a different name and icon, its own publisher and
-application identifier, and a notice saying it is not the author's. The exact terms are in
-`LICENSE-ADDITIONAL-TERMS.txt`.
+DiskTwins is a modified version of GEMINUS and follows the additional terms in
+`LICENSE-ADDITIONAL-TERMS.txt` (unchanged): its own name, icon, publisher and application
+identifier, and a notice saying it is not the author's.
 
 ---
 ---
 
-# GEMINUS
+# DiskTwins
 
 Confronta due dischi o cartelle su Linux e Windows — trova le differenze, copia, sposta ed elimina file.
 
 ---
 
-## GEMINUS — Castore e Polluce
+## DiskTwins — Castore e Polluce
 
-Un NAS costa, e va tenuto in piedi. Due dischi esterni costano molto meno e non chiedono niente. GEMINUS nasce da questa idea semplice: un disco di lavoro e un disco di backup, allineati quando lo decidi tu, senza hardware dedicato e senza un sistema da amministrare. GEMINUS non è un NAS — è uno strumento per chi vuole sapere esattamente cosa è cambiato tra due dischi o cartelle, e agire di conseguenza.
+Un NAS costa, e va tenuto in piedi. Due dischi esterni costano molto meno e non chiedono niente. DiskTwins, il progetto originale, nasce da questa idea semplice: un disco di lavoro e un disco di backup, allineati quando lo decidi tu, senza hardware dedicato e senza un sistema da amministrare. DiskTwins non è un NAS — è uno strumento per chi vuole sapere esattamente cosa è cambiato tra due dischi o cartelle, e agire di conseguenza.
 
-Scegli due percorsi. GEMINUS li confronta file per file. Vedi le differenze. Copi, sposti o cancelli quello che vuoi.
+Scegli due percorsi. DiskTwins li confronta file per file. Vedi le differenze. Copi, sposti o cancelli quello che vuoi.
 
-Quando lanci un confronto, GEMINUS ti chiede come vuoi farlo. Tre metodi, tre livelli di accuratezza:
+Quando lanci un confronto, DiskTwins ti chiede come vuoi farlo. Tre metodi, tre livelli di accuratezza:
 
 - **Veloce** guarda nomi, dimensioni e date. Rapido, ma non ti dice se il contenuto è diverso.
 - **Approfondito** legge anche il contenuto, per essere sicuro che i file che sembrano uguali lo siano davvero. Lento, ma affidabile.
@@ -113,21 +132,33 @@ Quando lanci un confronto, GEMINUS ti chiede come vuoi farlo. Tre metodi, tre li
 
 Scegli il metodo che fa al caso tuo. Sincronizzazione quotidiana? Veloce. Backup importante? Approfondito. Dubbi su una USB vecchia? Completo.
 
-Quando incontra un file illeggibile su un disco danneggiato, GEMINUS non si blocca — lo marca con un avviso e porta a termine il confronto. Sai esattamente cosa non è stato possibile leggere.
+Quando incontra un file illeggibile su un disco danneggiato, DiskTwins non si blocca — lo marca con un avviso e porta a termine il confronto. Sai esattamente cosa non è stato possibile leggere.
 
-GEMINUS è un progetto open source nato da un'esigenza personale. Chiunque può contribuire — con lo stesso spirito pratico con cui è stato costruito.
+DiskTwins, il progetto originale, è un progetto open source nato da un'esigenza personale. Chiunque può contribuire — con lo stesso spirito pratico con cui è stato costruito.
+
+---
+
+## Cosa puoi fare
+
+- **Vedere le differenze** — due cartelle affiancate: solo in A, solo in B, modificati, uguali, illeggibili. Colonne per nome, data di modifica, tipo e dimensione, ordinabili con un clic.
+- **Copiare, spostare, cancellare** — trascinando tra i due lati (Ctrl = copia, Maiusc = sposta), dal menu del tasto destro o con Ctrl+C / Ctrl+X / Ctrl+V. I file cancellati vanno nel Cestino (Maiusc+Canc cancella definitivamente). F2 rinomina.
+- **Aspetto Windows 11** — Segoe UI, tema chiaro/scuro e colore d'accento del sistema, selettore cartelle in stile Esplora file con barra indirizzi e pannello laterale.
+- **Ricordare** — le ultime due cartelle tornano all'avvio, e i preferiti (★) conservano le coppie A ↔ B di uso abituale.
+- **Pianificare** — attività con regole per ogni tipo di differenza (copia A → B, B → A, vince il più recente, niente) che partono con DiskTwins aperto. Non cancellano mai nulla e saltano l'esecuzione se l'unità non è quella salvata.
+- **Da Esplora file** — su Windows l'installer aggiunge "Imposta come Disco A / Disco B in DiskTwins" al tasto destro di cartelle e unità.
 
 ---
 
 ## Installazione
 
-I pacchetti pronti stanno nella pagina dei rilasci — [Codeberg](https://codeberg.org/lucixdev/geminus/releases) o [GitHub](https://github.com/lucixdev/geminus/releases). GEMINUS vive in tutti e due i posti: Codeberg è la casa, GitHub è la copia, e portano lo stesso codice.
+I pacchetti pronti stanno nella [pagina dei rilasci](https://github.com/milaleo/disktwins/releases) di questo repository.
 
-I soli pacchetti ufficiali sono quelli pubblicati da `lucixdev` in queste due pagine. GEMINUS è software libero, quindi chiunque può pubblicarne una versione modificata: quelle build non sono mie, e di cosa fanno non posso rispondere.
+
+I soli pacchetti ufficiali di GEMINUS sono quelli pubblicati da `lucixdev` ([Codeberg](https://codeberg.org/lucixdev/geminus/releases) o [GitHub](https://github.com/lucixdev/geminus/releases)). DiskTwins è una versione modificata, non pubblicata dall'autore originale, e non è ufficiale.
 
 **Su Linux** — tre formati, scegli quello che ti serve: **AppImage** (un file solo: lo rendi eseguibile e lo lanci, senza installare niente), pacchetto **`.deb`** per Debian e derivate, pacchetto **`.rpm`** per Fedora.
 
-**Su Windows** — un programma di installazione: lo apri, vai avanti fino alla fine, e GEMINUS finisce nel menu di avvio. Serve Windows 10 22H2 o successivo, a 64 bit. Se al computer manca il componente di sistema che serve a mostrare l'interfaccia, l'installazione lo aggiunge da sé.
+**Su Windows** — un programma di installazione: lo apri, vai avanti fino alla fine, e DiskTwins finisce nel menu di avvio. Serve Windows 10 22H2 o successivo, a 64 bit. Se al computer manca il componente di sistema che serve a mostrare l'interfaccia, l'installazione lo aggiunge da sé.
 
 Il programma di installazione non è firmato, quindi Windows mostra un avviso di sicurezza prima di aprirlo: è atteso, e si passa oltre scegliendo di procedere. Un certificato costa ogni anno, e questo è il progetto di una persona sola.
 
@@ -135,14 +166,16 @@ Il programma di installazione non è firmato, quindi Windows mostra un avviso di
 
 ## Manuale
 
-Tutto quello che GEMINUS fa, passo per passo, in italiano e in inglese: [`MANUAL.md`](MANUAL.md).
+Tutto quello che DiskTwins fa, passo per passo, in italiano e in inglese: [`MANUAL.md`](MANUAL.md).
 
 ---
 
 ## Screenshot
 
-![GEMINUS tema scuro, inglese](screenshots/screenshot-dark-en.png)
-![GEMINUS tema chiaro, inglese](screenshots/screenshot-light-en.png)
+![DiskTwins tema scuro, inglese](screenshots/screenshot-dark-en.png)
+![DiskTwins tema chiaro, inglese](screenshots/screenshot-light-en.png)
+![Selettore cartelle, inglese](screenshots/screenshot-picker-en.png)
+![Pianificazione, inglese](screenshots/screenshot-schedule-en.png)
 
 ---
 
@@ -150,13 +183,12 @@ Tutto quello che GEMINUS fa, passo per passo, in italiano e in inglese: [`MANUAL
 
 Copyright (C) 2026 lucix.dev <lucix.dev@proton.me>
 
-GEMINUS è software libero sotto [GNU GPL, versione 3 o successive](https://www.gnu.org/licenses/gpl-3.0.html)
+DiskTwins è software libero sotto [GNU GPL, versione 3 o successive](https://www.gnu.org/licenses/gpl-3.0.html)
 — vedi `LICENSE`. Su Windows l'interfaccia è disegnata dal motore Microsoft Edge
 WebView2, che non è software libero: `LICENSE-EXCEPTION.txt` concede il permesso
 aggiuntivo che ne autorizza il collegamento. Il software scritto da altri e
-distribuito insieme a GEMINUS è elencato in `THIRD-PARTY-NOTICES.txt`.
+distribuito insieme a DiskTwins è elencato in `THIRD-PARTY-NOTICES.txt`.
 
-Chiunque può modificare GEMINUS e pubblicare il risultato, ma una versione
-modificata deve potersi distinguere dall'originale: un nome e un'icona diversi, un
-editore e un identificativo propri, e un avviso che dica che non è dell'autore. Le condizioni
-esatte stanno in `LICENSE-ADDITIONAL-TERMS.txt`.
+DiskTwins è una versione modificata di GEMINUS e rispetta i termini aggiuntivi di
+`LICENSE-ADDITIONAL-TERMS.txt` (invariati): nome, icona, editore e identificativo sono
+propri, e questo avviso dice che non è dell'autore.
