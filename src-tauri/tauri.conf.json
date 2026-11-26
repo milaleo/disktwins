@@ -1,9 +1,9 @@
 {
   "$schema": "https://schema.tauri.app/config/2",
-  "productName": "Geminus",
-  "mainBinaryName": "geminus",
-  "version": "1.1.0",
-  "identifier": "org.codeberg.lucixdev.geminus",
+  "productName": "DiskTwins",
+  "mainBinaryName": "disktwins",
+  "version": "0.1.0",
+  "identifier": "io.github.milaleo.disktwins",
   "build": {
     "frontendDist": "../src"
   },
@@ -11,7 +11,7 @@
     "withGlobalTauri": true,
     "windows": [
       {
-        "title": "GEMINUS",
+        "title": "DiskTwins — modified version of GEMINUS by lucixdev",
         "width": 1100,
         "height": 700,
         "minWidth": 800,
@@ -28,11 +28,11 @@
   "bundle": {
     "active": true,
     "targets": "all",
-    "publisher": "lucixdev",
-    "copyright": "Copyright (C) 2026 lucix.dev <lucix.dev@proton.me>",
+    "publisher": "milaleo",
+    "copyright": "Copyright (C) 2026 lucix.dev <lucix.dev@proton.me> (GEMINUS); modifications Copyright (C) 2026 milaleo",
     "licenseFile": "../LICENSE",
-    "shortDescription": "Compare two disks or folders",
-    "longDescription": "GEMINUS compares two disks or two folders and shows side by side what is identical, what changed and what exists on one side only. Differences can then be copied, moved or deleted by dragging them between the two columns. It reads file contents when asked to, keeps working on slow or damaged disks, and can check the physical health of the drives before comparing them.",
+    "shortDescription": "Compare two disks or folders (modified version of GEMINUS by lucixdev)",
+    "longDescription": "DiskTwins is a modified version of GEMINUS by lucixdev, not the original program. It compares two disks or two folders and shows side by side what is identical, what changed and what exists on one side only. Differences can then be copied, moved or deleted by dragging them between the two columns. It reads file contents when asked to, keeps working on slow or damaged disks, and can check the physical health of the drives before comparing them.",
     "resources": {
       "../LICENSE": "LICENSE",
       "../LICENSE-EXCEPTION.txt": "LICENSE-EXCEPTION.txt",
@@ -41,12 +41,12 @@
     "linux": {
       "deb": {
         "files": {
-          "/usr/share/doc/geminus/copyright": "../LICENSE"
+          "/usr/share/doc/disktwins/copyright": "../LICENSE"
         }
       },
       "rpm": {
         "files": {
-          "/usr/share/licenses/geminus/LICENSE": "../LICENSE"
+          "/usr/share/licenses/disktwins/LICENSE": "../LICENSE"
         }
       }
     },

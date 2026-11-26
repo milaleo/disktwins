@@ -23,21 +23,26 @@
 !macroend
 
 !macro NSIS_HOOK_POSTINSTALL
+  ; Remove the entries of earlier preview builds that used the original name
+  DeleteRegKey HKCU "Software\Classes\Directory\shell\GeminusDiskA"
+  DeleteRegKey HKCU "Software\Classes\Directory\shell\GeminusDiskB"
+  DeleteRegKey HKCU "Software\Classes\Drive\shell\GeminusDiskA"
+  DeleteRegKey HKCU "Software\Classes\Drive\shell\GeminusDiskB"
   ; Folders
-  WriteRegStr HKCU "Software\Classes\Directory\shell\GeminusDiskA" "" "Imposta come Disco A in GEMINUS"
-  WriteRegStr HKCU "Software\Classes\Directory\shell\GeminusDiskA" "Icon" '"$INSTDIR\${MAINBINARYNAME}.exe"'
-  WriteRegStr HKCU "Software\Classes\Directory\shell\GeminusDiskA\command" "" '"$INSTDIR\${MAINBINARYNAME}.exe" --disk-a "%1"'
-  WriteRegStr HKCU "Software\Classes\Directory\shell\GeminusDiskB" "" "Imposta come Disco B in GEMINUS"
-  WriteRegStr HKCU "Software\Classes\Directory\shell\GeminusDiskB" "Icon" '"$INSTDIR\${MAINBINARYNAME}.exe"'
-  WriteRegStr HKCU "Software\Classes\Directory\shell\GeminusDiskB\command" "" '"$INSTDIR\${MAINBINARYNAME}.exe" --disk-b "%1"'
+  WriteRegStr HKCU "Software\Classes\Directory\shell\DiskTwinsDiskA" "" "Imposta come Disco A in DiskTwins"
+  WriteRegStr HKCU "Software\Classes\Directory\shell\DiskTwinsDiskA" "Icon" '"$INSTDIR\${MAINBINARYNAME}.exe"'
+  WriteRegStr HKCU "Software\Classes\Directory\shell\DiskTwinsDiskA\command" "" '"$INSTDIR\${MAINBINARYNAME}.exe" --disk-a "%1"'
+  WriteRegStr HKCU "Software\Classes\Directory\shell\DiskTwinsDiskB" "" "Imposta come Disco B in DiskTwins"
+  WriteRegStr HKCU "Software\Classes\Directory\shell\DiskTwinsDiskB" "Icon" '"$INSTDIR\${MAINBINARYNAME}.exe"'
+  WriteRegStr HKCU "Software\Classes\Directory\shell\DiskTwinsDiskB\command" "" '"$INSTDIR\${MAINBINARYNAME}.exe" --disk-b "%1"'
 
   ; Drives
-  WriteRegStr HKCU "Software\Classes\Drive\shell\GeminusDiskA" "" "Imposta come Disco A in GEMINUS"
-  WriteRegStr HKCU "Software\Classes\Drive\shell\GeminusDiskA" "Icon" '"$INSTDIR\${MAINBINARYNAME}.exe"'
-  WriteRegStr HKCU "Software\Classes\Drive\shell\GeminusDiskA\command" "" '"$INSTDIR\${MAINBINARYNAME}.exe" --disk-a "%1"'
-  WriteRegStr HKCU "Software\Classes\Drive\shell\GeminusDiskB" "" "Imposta come Disco B in GEMINUS"
-  WriteRegStr HKCU "Software\Classes\Drive\shell\GeminusDiskB" "Icon" '"$INSTDIR\${MAINBINARYNAME}.exe"'
-  WriteRegStr HKCU "Software\Classes\Drive\shell\GeminusDiskB\command" "" '"$INSTDIR\${MAINBINARYNAME}.exe" --disk-b "%1"'
+  WriteRegStr HKCU "Software\Classes\Drive\shell\DiskTwinsDiskA" "" "Imposta come Disco A in DiskTwins"
+  WriteRegStr HKCU "Software\Classes\Drive\shell\DiskTwinsDiskA" "Icon" '"$INSTDIR\${MAINBINARYNAME}.exe"'
+  WriteRegStr HKCU "Software\Classes\Drive\shell\DiskTwinsDiskA\command" "" '"$INSTDIR\${MAINBINARYNAME}.exe" --disk-a "%1"'
+  WriteRegStr HKCU "Software\Classes\Drive\shell\DiskTwinsDiskB" "" "Imposta come Disco B in DiskTwins"
+  WriteRegStr HKCU "Software\Classes\Drive\shell\DiskTwinsDiskB" "Icon" '"$INSTDIR\${MAINBINARYNAME}.exe"'
+  WriteRegStr HKCU "Software\Classes\Drive\shell\DiskTwinsDiskB\command" "" '"$INSTDIR\${MAINBINARYNAME}.exe" --disk-b "%1"'
 
   ; Tell the shell that associations changed
   System::Call 'shell32::SHChangeNotify(i 0x08000000, i 0, i 0, i 0)'
@@ -47,10 +52,10 @@
 !macroend
 
 !macro NSIS_HOOK_POSTUNINSTALL
-  DeleteRegKey HKCU "Software\Classes\Directory\shell\GeminusDiskA"
-  DeleteRegKey HKCU "Software\Classes\Directory\shell\GeminusDiskB"
-  DeleteRegKey HKCU "Software\Classes\Drive\shell\GeminusDiskA"
-  DeleteRegKey HKCU "Software\Classes\Drive\shell\GeminusDiskB"
+  DeleteRegKey HKCU "Software\Classes\Directory\shell\DiskTwinsDiskA"
+  DeleteRegKey HKCU "Software\Classes\Directory\shell\DiskTwinsDiskB"
+  DeleteRegKey HKCU "Software\Classes\Drive\shell\DiskTwinsDiskA"
+  DeleteRegKey HKCU "Software\Classes\Drive\shell\DiskTwinsDiskB"
 
   System::Call 'shell32::SHChangeNotify(i 0x08000000, i 0, i 0, i 0)'
 !macroend

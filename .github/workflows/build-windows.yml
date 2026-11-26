@@ -2,9 +2,17 @@ name: Build Windows
 
 on:
   workflow_dispatch:
+    inputs:
+      release:
+        description: "Publish the installer as a GitHub release (public download)"
+        type: boolean
+        default: false
   pull_request:
   push:
     branches: [main]
+
+permissions:
+  contents: write
 
 jobs:
   windows:
@@ -18,9 +26,29 @@ jobs:
       - name: Build (NSIS installer)
         working-directory: src-tauri
         run: npx --yes @tauri-apps/cli@2 build --bundles nsis
+      - name: Name the portable exe
+        shell: pwsh
+        run: Copy-Item src-tauri/target/release/disktwins.exe src-tauri/target/release/disktwins-portable-x64.exe
       - uses: actions/upload-artifact@v4
         with:
-          name: geminus-windows
+          name: disktwins-windows
           path: |
             src-tauri/target/release/bundle/nsis/*.exe
-            src-tauri/target/release/geminus.exe
+            src-tauri/target/release/disktwins-portable-x64.exe
+      - name: Publish release
+        if: ${{ github.event_name == 'workflow_dispatch' && inputs.release }}
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: disktwins-preview-${{ github.run_number }}
+          name: DiskTwins preview ${{ github.run_number }}
+          prerelease: true
+          body: |
+            **DiskTwins is a modified version of GEMINUS by lucixdev. It is not the original program, and it is not published or approved by its author.** Original project: https://codeberg.org/lucixdev/geminus
+
+            Windows build with a Windows 11 interface, Recycle Bin, shortcuts, favourites and a scheduler. Modifications (C) 2026 milaleo, under the same GPL v3 licence.
+            - `DiskTwins_*-setup.exe`: installer (adds "Set as Disk A/B" to the Explorer right-click menu)
+            - `disktwins-portable-x64.exe`: portable, no install
+            The installer is not signed: Windows will show a security warning.
+          files: |
+            src-tauri/target/release/bundle/nsis/*.exe
+            src-tauri/target/release/disktwins-portable-x64.exe

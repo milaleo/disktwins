@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Compare two disks or folders on Linux and Windows — GEMINUS</title>
-<meta name="description" content="GEMINUS compares two disks or folders on Linux and Windows, shows you exactly what changed, and lets you copy, move or delete the differences. Free software, GPLv3.">
+<title>Compare two disks or folders on Linux and Windows — DiskTwins</title>
+<meta name="description" content="DiskTwins compares two disks or folders on Linux and Windows, shows you exactly what changed, and lets you copy, move or delete the differences. Free software, GPLv3.">
 <link rel="icon" href="icon.svg" type="image/svg+xml">
 <style>
   :root {
@@ -158,6 +158,7 @@
 </style>
 </head>
 <body>
+<div style="background:#fef3c7;color:#1c1a17;padding:10px 16px;font:14px/1.4 system-ui,sans-serif;text-align:center;border-bottom:1px solid #e0dedb">DiskTwins is a <strong>modified version of GEMINUS</strong> by lucixdev — not the original program, and not published or approved by its author. <a href="https://codeberg.org/lucixdev/geminus">Original project</a>.</div>
 
 <div class="langbar">
   <button id="btn-en" aria-pressed="true">English</button>
@@ -168,7 +169,7 @@
 <main id="lang-en" class="wrap">
 
   <header class="hero">
-    <p class="eyebrow">GEMINUS</p>
+    <p class="eyebrow">DiskTwins</p>
     <h1>Compare two disks or folders on Linux and Windows</h1>
     <p class="lede">
       See exactly what changed between a working drive and its backup — then copy,
@@ -176,8 +177,8 @@
       background, no account.
     </p>
     <div class="cta">
-      <a class="btn primary" href="https://codeberg.org/lucixdev/geminus/releases">Download</a>
-      <a class="btn" href="https://github.com/lucixdev/geminus/blob/main/MANUAL.md">Read the manual</a>
+      <a class="btn primary" href="https://github.com/milaleo/disktwins/releases">Download</a>
+      <a class="btn" href="https://github.com/milaleo/disktwins/blob/main/MANUAL.md">Read the manual</a>
       <p class="cta-note">Free software, GPLv3 · Linux (AppImage, .deb, .rpm) and Windows 10/11 64‑bit</p>
     </div>
   </header>
@@ -186,21 +187,21 @@
     <h2>Why</h2>
     <p>
       A NAS costs money, and it has to be kept running. Two external drives cost far
-      less and ask for nothing. GEMINUS was born from this simple idea: one working
+      less and ask for nothing. DiskTwins was born from this simple idea: one working
       drive and one backup drive, brought in line when <em>you</em> decide, with no
       dedicated hardware and no system to administer.
     </p>
     <p>
-      GEMINUS is not a NAS — it is a tool for people who want to know exactly what has
+      DiskTwins is not a NAS — it is a tool for people who want to know exactly what has
       changed between two drives or folders, and act accordingly. Choose two paths.
-      GEMINUS compares them file by file. You see the differences. You copy, move or
+      DiskTwins compares them file by file. You see the differences. You copy, move or
       delete what you want.
     </p>
   </section>
 
   <section>
     <h2>Three ways to compare</h2>
-    <p>Every time you start a comparison, GEMINUS asks how thorough you want to be.</p>
+    <p>Every time you start a comparison, DiskTwins asks how thorough you want to be.</p>
     <div class="methods">
       <div class="method">
         <h3>Quick</h3>
@@ -220,7 +221,7 @@
   <section>
     <h2>A damaged drive does not stop the work</h2>
     <p>
-      When GEMINUS meets a file it cannot read, it doesn't give up on the whole job:
+      When DiskTwins meets a file it cannot read, it doesn't give up on the whole job:
       it marks that file with a warning and finishes the comparison. At the end you
       know exactly what could not be read, and where.
     </p>
@@ -230,11 +231,11 @@
     <h2>What it looks like</h2>
     <div class="shots">
       <figure>
-        <img src="screenshots/screenshot-dark-en.png" alt="GEMINUS comparing two folders side by side, dark theme" loading="lazy">
+        <img src="screenshots/screenshot-dark-en.png" alt="DiskTwins comparing two folders side by side, dark theme" loading="lazy">
         <figcaption>Two folders side by side, differences marked. Dark theme.</figcaption>
       </figure>
       <figure>
-        <img src="screenshots/screenshot-light-en.png" alt="GEMINUS comparing two folders side by side, light theme" loading="lazy">
+        <img src="screenshots/screenshot-light-en.png" alt="DiskTwins comparing two folders side by side, light theme" loading="lazy">
         <figcaption>The same view in the light theme.</figcaption>
       </figure>
     </div>
@@ -254,7 +255,7 @@
       <div class="platform">
         <h3>Windows</h3>
         <p>
-          An installer: open it, click through to the end, and GEMINUS lands in the
+          An installer: open it, click through to the end, and DiskTwins lands in the
           start menu. Needs <strong>Windows 10 22H2 or later, 64‑bit</strong>. If the
           machine is missing the system component used to draw the interface, the
           installation adds it.
@@ -271,26 +272,26 @@
   <section>
     <h2>Where it lives</h2>
     <p>
-      GEMINUS is published in two places, and they carry exactly the same code:
+      DiskTwins is published in two places, and they carry exactly the same code:
       Codeberg is home, GitHub is its mirror. Neither is a fork — pick whichever
       you prefer.
     </p>
     <div class="mirrors">
-      <a class="btn" href="https://codeberg.org/lucixdev/geminus">Codeberg</a>
-      <a class="btn" href="https://github.com/lucixdev/geminus">GitHub</a>
+      <a class="btn" href="https://codeberg.org/lucixdev/geminus">GEMINUS (original) — Codeberg</a>
+      <a class="btn" href="https://github.com/milaleo/disktwins">DiskTwins — GitHub</a>
     </div>
   </section>
 
   <footer>
     <p>
-      Copyright © 2026 lucix.dev — GEMINUS is free software under the
+      Copyright © 2026 lucix.dev — DiskTwins is free software under the
       <a href="https://www.gnu.org/licenses/gpl-3.0.html">GNU GPL, version 3 or later</a>.
     </p>
     <p>
       On Windows the interface is drawn by the Microsoft Edge WebView2 runtime,
       which is not free software: <code>LICENSE-EXCEPTION.txt</code> grants the
       additional permission that allows linking against it. Software written by
-      others and shipped together with GEMINUS is listed in
+      others and shipped together with DiskTwins is listed in
       <code>THIRD-PARTY-NOTICES.txt</code>.
     </p>
   </footer>
@@ -301,7 +302,7 @@
 <main id="lang-it" class="wrap" hidden>
 
   <header class="hero">
-    <p class="eyebrow">GEMINUS</p>
+    <p class="eyebrow">DiskTwins</p>
     <h1>Confronta due dischi o due cartelle su Linux e Windows</h1>
     <p class="lede">
       Vedi esattamente cosa è cambiato fra il disco di lavoro e quello di backup, e
@@ -309,8 +310,8 @@
       servizio che gira di nascosto, nessun account.
     </p>
     <div class="cta">
-      <a class="btn primary" href="https://codeberg.org/lucixdev/geminus/releases">Scarica</a>
-      <a class="btn" href="https://github.com/lucixdev/geminus/blob/main/MANUAL.md">Leggi il manuale</a>
+      <a class="btn primary" href="https://github.com/milaleo/disktwins/releases">Scarica</a>
+      <a class="btn" href="https://github.com/milaleo/disktwins/blob/main/MANUAL.md">Leggi il manuale</a>
       <p class="cta-note">Software libero, GPLv3 · Linux (AppImage, .deb, .rpm) e Windows 10/11 a 64 bit</p>
     </div>
   </header>
@@ -319,21 +320,21 @@
     <h2>Perché</h2>
     <p>
       Un NAS costa, e va tenuto in piedi. Due dischi esterni costano molto meno e non
-      chiedono niente. GEMINUS nasce da questa idea semplice: un disco di lavoro e un
+      chiedono niente. DiskTwins nasce da questa idea semplice: un disco di lavoro e un
       disco di backup, allineati quando lo decidi <em>tu</em>, senza hardware dedicato
       e senza un sistema da amministrare.
     </p>
     <p>
-      GEMINUS non è un NAS — è uno strumento per chi vuole sapere esattamente cosa è
+      DiskTwins non è un NAS — è uno strumento per chi vuole sapere esattamente cosa è
       cambiato tra due dischi o due cartelle, e agire di conseguenza. Scegli due
-      percorsi. GEMINUS li confronta file per file. Vedi le differenze. Copi, sposti o
+      percorsi. DiskTwins li confronta file per file. Vedi le differenze. Copi, sposti o
       cancelli quello che vuoi.
     </p>
   </section>
 
   <section>
     <h2>Tre modi di confrontare</h2>
-    <p>Ogni volta che lanci un confronto, GEMINUS ti chiede quanto vuoi essere accurato.</p>
+    <p>Ogni volta che lanci un confronto, DiskTwins ti chiede quanto vuoi essere accurato.</p>
     <div class="methods">
       <div class="method">
         <h3>Veloce</h3>
@@ -353,7 +354,7 @@
   <section>
     <h2>Un disco danneggiato non ferma il lavoro</h2>
     <p>
-      Quando GEMINUS incontra un file che non riesce a leggere, non molla tutto:
+      Quando DiskTwins incontra un file che non riesce a leggere, non molla tutto:
       lo marca con un avviso e porta a termine il confronto. Alla fine sai
       esattamente cosa non è stato possibile leggere, e dove.
     </p>
@@ -363,11 +364,11 @@
     <h2>Com'è fatto</h2>
     <div class="shots">
       <figure>
-        <img src="screenshots/screenshot-dark-en.png" alt="GEMINUS confronta due cartelle affiancate, tema scuro" loading="lazy">
+        <img src="screenshots/screenshot-dark-en.png" alt="DiskTwins confronta due cartelle affiancate, tema scuro" loading="lazy">
         <figcaption>Due cartelle affiancate, con le differenze evidenziate. Tema scuro.</figcaption>
       </figure>
       <figure>
-        <img src="screenshots/screenshot-light-en.png" alt="GEMINUS confronta due cartelle affiancate, tema chiaro" loading="lazy">
+        <img src="screenshots/screenshot-light-en.png" alt="DiskTwins confronta due cartelle affiancate, tema chiaro" loading="lazy">
         <figcaption>La stessa vista nel tema chiaro.</figcaption>
       </figure>
     </div>
@@ -388,7 +389,7 @@
       <div class="platform">
         <h3>Windows</h3>
         <p>
-          Un programma di installazione: lo apri, vai avanti fino alla fine, e GEMINUS
+          Un programma di installazione: lo apri, vai avanti fino alla fine, e DiskTwins
           finisce nel menu di avvio. Serve <strong>Windows 10 22H2 o successivo, a 64
           bit</strong>. Se al computer manca il componente di sistema che serve a
           mostrare l'interfaccia, l'installazione lo aggiunge da sé.
@@ -406,26 +407,26 @@
   <section>
     <h2>Dove vive</h2>
     <p>
-      GEMINUS è pubblicato in due posti, e portano esattamente lo stesso codice:
+      DiskTwins è pubblicato in due posti, e portano esattamente lo stesso codice:
       Codeberg è la casa, GitHub è la copia. Nessuno dei due è un fork — prendi
       quello che preferisci.
     </p>
     <div class="mirrors">
-      <a class="btn" href="https://codeberg.org/lucixdev/geminus">Codeberg</a>
-      <a class="btn" href="https://github.com/lucixdev/geminus">GitHub</a>
+      <a class="btn" href="https://codeberg.org/lucixdev/geminus">GEMINUS (original) — Codeberg</a>
+      <a class="btn" href="https://github.com/milaleo/disktwins">DiskTwins — GitHub</a>
     </div>
   </section>
 
   <footer>
     <p>
-      Copyright © 2026 lucix.dev — GEMINUS è software libero sotto la
+      Copyright © 2026 lucix.dev — DiskTwins è software libero sotto la
       <a href="https://www.gnu.org/licenses/gpl-3.0.html">GNU GPL, versione 3 o successive</a>.
     </p>
     <p>
       Su Windows l'interfaccia è disegnata dal motore Microsoft Edge WebView2, che non
       è software libero: <code>LICENSE-EXCEPTION.txt</code> concede il permesso
       aggiuntivo che ne autorizza il collegamento. Il software scritto da altri e
-      distribuito insieme a GEMINUS è elencato in <code>THIRD-PARTY-NOTICES.txt</code>.
+      distribuito insieme a DiskTwins è elencato in <code>THIRD-PARTY-NOTICES.txt</code>.
     </p>
   </footer>
 

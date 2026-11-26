@@ -698,7 +698,7 @@ fn save_report(downloads: &str, label: &str, header: &str, body: &str) -> Result
     let dir = std::path::Path::new(downloads);
     std::fs::create_dir_all(dir).map_err(|e| CmdError::from_io("report_not_saved", &e))?;
     let file = dir.join(format!(
-        "geminus_health_{}_{:04}{:02}{:02}_{:02}{:02}{:02}.txt",
+        "disktwins_health_{}_{:04}{:02}{:02}_{:02}{:02}{:02}.txt",
         label, now.wYear, now.wMonth, now.wDay, now.wHour, now.wMinute, now.wSecond
     ));
     let when = format!(

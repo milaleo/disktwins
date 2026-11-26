@@ -22,7 +22,7 @@
 <html lang="it" id="html-root">
 <head>
 <meta charset="UTF-8">
-<title>GEMINUS — confronto dischi</title>
+<title>DiskTwins — versione modificata di GEMINUS (lucixdev)</title>
 <style>
 *{box-sizing:border-box;margin:0;padding:0;}
 
@@ -903,6 +903,7 @@ body.dark .picker-btn.primary{color:#000;}
 .sf-day{display:flex;align-items:center;gap:4px;font-size:13px;padding:3px 8px;border:1px solid var(--bd2);border-radius:var(--r);background:var(--s);}
 .sf-check{display:flex;align-items:center;gap:6px;font-size:13px;}
 .sched-box .picker-footer{padding:12px 16px;border-top:1px solid var(--bd);background:var(--bg);}
+.mod-notice{padding:8px 10px;border-left:3px solid var(--wn);background:var(--wn-bg);border-radius:var(--r);font-size:12px;}
 </style>
 </head>
 <body id="body-root">
@@ -1011,7 +1012,7 @@ body.dark .picker-btn.primary{color:#000;}
       <button class="picker-close" onclick="closeScheduler()">&times;</button>
     </div>
     <div class="sched-view" id="schedListView">
-      <div class="sched-note" data-i18n="sched_note">Le attività partono solo con GEMINUS aperto (anche ridotto a icona). Non cancellano mai nulla.</div>
+      <div class="sched-note" data-i18n="sched_note">Le attività partono solo con DiskTwins aperto (anche ridotto a icona). Non cancellano mai nulla.</div>
       <div class="sched-list" id="schedList"></div>
       <div class="picker-footer">
         <button class="picker-btn primary" onclick="schedEdit(null)" data-i18n="sched_new">Nuova attività</button>
@@ -1274,7 +1275,7 @@ body.dark .picker-btn.primary{color:#000;}
 <div class="help-dialog" id="helpDialog" onclick="helpBackdrop(event)">
   <div class="help-box" onclick="event.stopPropagation()">
     <div class="help-header">
-      <span class="help-title" id="helpTitle" data-i18n="help_title">Manuale GEMINUS</span>
+      <span class="help-title" id="helpTitle" data-i18n="help_title">Manuale DiskTwins</span>
       <span class="help-version" id="helpVersion"></span>
       <button class="help-close" onclick="closeHelp()">&times;</button>
     </div>
@@ -1293,7 +1294,7 @@ body.dark .picker-btn.primary{color:#000;}
 <div class="onboarding-dialog" id="onboardingDialog">
   <div class="onboarding-box">
     <div class="onboarding-header">
-      <span class="onboarding-title" id="onboardingTitle" data-i18n="onb_title">Benvenuto in GEMINUS</span>
+      <span class="onboarding-title" id="onboardingTitle" data-i18n="onb_title">Benvenuto in DiskTwins</span>
       <button class="theme-btn" id="onboardingLangBtn" onclick="toggleLang()">🌐 IT</button>
       <button class="onboarding-close" onclick="closeOnboarding()">&times;</button>
     </div>
@@ -1627,7 +1628,7 @@ document.addEventListener('keydown', (e) => {
 const I18N = {
   it: {
     theme_dark: '☾ Scuro', theme_light: '☀ Chiaro',
-    window_title: 'GEMINUS — confronto dischi',
+    window_title: 'DiskTwins — versione modificata di GEMINUS (lucixdev)',
     disk_a: 'Disco A', disk_b: 'Disco B',
     disk_placeholder: 'Clicca per scegliere...',
     search_placeholder: '🔍  Cerca file...',
@@ -1740,7 +1741,7 @@ const I18N = {
     sched_sum_compare_stopped: 'Confronto interrotto', sched_sum_invalid_rules: 'Regole non valide',
 
     btn_sched: '⏱ Pianificazione', sched_title: 'Pianificazione',
-    sched_note: 'Le attività partono solo con GEMINUS aperto (anche ridotto a icona). Non cancellano mai nulla.',
+    sched_note: 'Le attività partono solo con DiskTwins aperto (anche ridotto a icona). Non cancellano mai nulla.',
     sched_new: 'Nuova attività', btn_close: 'Chiudi', sched_save: 'Salva', sched_pick: 'Scegli…',
     sched_empty: 'Nessuna attività. Creane una con "Nuova attività".', sched_never: 'Mai eseguita',
     sched_next: 'prossima:', sched_run: 'Esegui ora', sched_edit: 'Modifica', sched_log: 'Registro',
@@ -1797,21 +1798,21 @@ const I18N = {
     cmp_method_full_desc: 'Approfondito + verifica salute fisica dei dischi. Richiede la password di amministratore.',
     cmp_method_full_desc_win: 'Approfondito + verifica salute fisica dei dischi. Richiede il consenso di Windows.',
     cmp_confirm_fast_title: 'Confronto Veloce',
-    cmp_confirm_fast_body: 'GEMINUS confronterà solo i nomi dei file, le dimensioni e le date di modifica. Non leggerà il contenuto dei file. È il metodo più rapido, ma se due file hanno la stessa dimensione e la stessa data di modifica saranno considerati identici anche se il contenuto è diverso.',
+    cmp_confirm_fast_body: 'DiskTwins confronterà solo i nomi dei file, le dimensioni e le date di modifica. Non leggerà il contenuto dei file. È il metodo più rapido, ma se due file hanno la stessa dimensione e la stessa data di modifica saranno considerati identici anche se il contenuto è diverso.',
     cmp_confirm_deep_title: 'Confronto Approfondito',
-    cmp_confirm_deep_body: 'GEMINUS leggerà da cima a fondo il contenuto di tutti i file che si somigliano — stesso nome, stessa dimensione, stessa data — per essere certo che siano davvero identici dentro. È un\'operazione lenta, può richiedere ore su dischi grandi, ma offre la massima sicurezza.',
+    cmp_confirm_deep_body: 'DiskTwins leggerà da cima a fondo il contenuto di tutti i file che si somigliano — stesso nome, stessa dimensione, stessa data — per essere certo che siano davvero identici dentro. È un\'operazione lenta, può richiedere ore su dischi grandi, ma offre la massima sicurezza.',
     cmp_confirm_full_title: 'Confronto Completo',
-    cmp_confirm_full_body: 'GEMINUS verificherà prima lo stato di salute fisica dei dischi (richiede la password di amministratore) e poi eseguirà il Confronto Approfondito leggendo il contenuto byte per byte. È la verifica più rigorosa.',
-    cmp_confirm_full_body_win: 'GEMINUS verificherà prima lo stato di salute fisica dei dischi (Windows ti chiederà il consenso) e poi eseguirà il Confronto Approfondito leggendo il contenuto byte per byte. È la verifica più rigorosa.',
+    cmp_confirm_full_body: 'DiskTwins verificherà prima lo stato di salute fisica dei dischi (richiede la password di amministratore) e poi eseguirà il Confronto Approfondito leggendo il contenuto byte per byte. È la verifica più rigorosa.',
+    cmp_confirm_full_body_win: 'DiskTwins verificherà prima lo stato di salute fisica dei dischi (Windows ti chiederà il consenso) e poi eseguirà il Confronto Approfondito leggendo il contenuto byte per byte. È la verifica più rigorosa.',
     cmp_btn_proceed: 'Procedi',
     cmp_fast_mode_banner: 'Confronto Veloce: due file con stessa dimensione e stessa data di modifica sono stati considerati identici senza leggerne il contenuto. Per la massima sicurezza, ripeti il confronto in modalità Approfondito o Completo.',
     // ─── Pre-compare disk diagnosis ───
     diag_sudo_title: 'Verifica stato dischi',
-    diag_sudo_msg: 'Prima di confrontare i dischi, GEMINUS può verificarne lo stato di salute. Serve la password di amministratore. Me la concedi?',
+    diag_sudo_msg: 'Prima di confrontare i dischi, DiskTwins può verificarne lo stato di salute. Serve la password di amministratore. Me la concedi?',
     diag_nosudo_title: 'Verifica salute non disponibile',
-    diag_nosudo_msg: 'Senza la password di amministratore GEMINUS non può verificare lo stato di salute fisica dei dischi. Puoi continuare con il solo Confronto Approfondito (lettura byte per byte del contenuto, senza verifica salute) oppure tornare alla scelta del metodo.',
-    diag_sudo_msg_win: 'Prima di confrontare i dischi, GEMINUS può verificarne lo stato di salute. Windows ti chiederà il consenso. Procedo?',
-    diag_nosudo_msg_win: 'Senza il consenso GEMINUS non può verificare lo stato di salute fisica dei dischi. Puoi continuare con il solo Confronto Approfondito (lettura byte per byte del contenuto, senza verifica salute) oppure tornare alla scelta del metodo.',
+    diag_nosudo_msg: 'Senza la password di amministratore DiskTwins non può verificare lo stato di salute fisica dei dischi. Puoi continuare con il solo Confronto Approfondito (lettura byte per byte del contenuto, senza verifica salute) oppure tornare alla scelta del metodo.',
+    diag_sudo_msg_win: 'Prima di confrontare i dischi, DiskTwins può verificarne lo stato di salute. Windows ti chiederà il consenso. Procedo?',
+    diag_nosudo_msg_win: 'Senza il consenso DiskTwins non può verificare lo stato di salute fisica dei dischi. Puoi continuare con il solo Confronto Approfondito (lettura byte per byte del contenuto, senza verifica salute) oppure tornare alla scelta del metodo.',
     diag_running_title: 'Diagnosi in corso...',
     diag_running_msg: 'Verifica dello stato dei dischi in corso. Attendi qualche secondo...',
     diag_result_ok_title: '✅ Dischi in buona salute',
@@ -1834,7 +1835,7 @@ const I18N = {
     diag_btn_no_cancel: 'No, annulla',
     diag_deep_redirect: 'Per la verifica approfondita SMART del disco, usa l\'icona 🩺 sul blocco disco.',
     smart_missing_title: 'Strumento di diagnosi non installato',
-    smart_missing_msg: 'Per controllare la salute dei dischi GEMINUS si appoggia a un programma esterno gratuito, che si installa una volta sola. Senza di esso confronto e copia funzionano lo stesso: manca soltanto il controllo dello stato dei dischi.',
+    smart_missing_msg: 'Per controllare la salute dei dischi DiskTwins si appoggia a un programma esterno gratuito, che si installa una volta sola. Senza di esso confronto e copia funzionano lo stesso: manca soltanto il controllo dello stato dei dischi.',
     smart_missing_steps_windows: 'Premi Scarica: si apre la pagina ufficiale nel browser.\nScarica il file per Windows, quello che finisce per "setup.exe".\nAprilo con un doppio clic e vai avanti fino alla fine.\nTorna qui e premi Riprova.',
     smart_missing_steps_linux: 'Apri il gestore dei programmi del tuo sistema.\nCerca "smartmontools" e installalo.\nTorna qui e premi Riprova.',
     smart_missing_still: 'Ancora non lo trovo. Se l\'hai appena installato, aspetta che l\'installazione finisca e riprova.',
@@ -1847,7 +1848,7 @@ const I18N = {
     deep_confirm_msg: 'Stai per lanciare il test interno SMART del Disco {side} ({device}). Può richiedere ore. Il disco resta utilizzabile durante il test, ma più lento. Procedi?',
     deep_confirm_est: 'Tempo stimato: {time}.',
     deep_confirm_start: 'Avvia verifica',
-    report_header: '=== GEMINUS — Verifica Salute Estesa ===\nDispositivo: {device}\nData: {date}',
+    report_header: '=== DiskTwins — Verifica Salute Estesa ===\nDispositivo: {device}\nData: {date}',
     deep_done_title: '✅ Verifica Salute Estesa completata',
     deep_done_msg: 'Verifica Salute Estesa del Disco {side} completata. Risultato salvato in {path}.',
     deep_fail_title: '❌ Verifica Salute Estesa non riuscita',
@@ -1902,14 +1903,14 @@ const I18N = {
     badge_diff: 'Modificati', badge_only_a: 'Solo in A', badge_only_b: 'Solo in B',
     // ─── Help / in-app manual ───
     btn_help: '❓ Aiuto',
-    help_title: 'Manuale GEMINUS',
+    help_title: 'Manuale DiskTwins',
     help_tab_about: 'Cosa è',
     help_tab_usage: 'Uso',
     help_tab_disks: 'Dischi lenti o difettosi',
     help_tab_format: 'Formattazione',
     help_tab_faq: 'Domande frequenti',
     // ─── Onboarding (every launch) ───
-    onb_title: 'Benvenuto in GEMINUS',
+    onb_title: 'Benvenuto in DiskTwins',
     onb_prev: '← Indietro',
     onb_next: 'Avanti →',
     onb_done: 'Iniziamo',
@@ -1917,7 +1918,7 @@ const I18N = {
   },
   en: {
     theme_dark: '☾ Dark', theme_light: '☀ Light',
-    window_title: 'GEMINUS — disk comparison',
+    window_title: 'DiskTwins — modified version of GEMINUS by lucixdev',
     disk_a: 'Drive A', disk_b: 'Drive B',
     disk_placeholder: 'Click to choose...',
     search_placeholder: '🔍  Search files...',
@@ -2025,7 +2026,7 @@ const I18N = {
     sched_sum_compare_stopped: 'Comparison stopped', sched_sum_invalid_rules: 'Invalid rules',
 
     btn_sched: '⏱ Schedule', sched_title: 'Schedule',
-    sched_note: 'Tasks run only while GEMINUS is open (also minimised). They never delete anything.',
+    sched_note: 'Tasks run only while DiskTwins is open (also minimised). They never delete anything.',
     sched_new: 'New task', btn_close: 'Close', sched_save: 'Save', sched_pick: 'Choose…',
     sched_empty: 'No tasks yet. Create one with "New task".', sched_never: 'Never run',
     sched_next: 'next:', sched_run: 'Run now', sched_edit: 'Edit', sched_log: 'Log',
@@ -2082,21 +2083,21 @@ const I18N = {
     cmp_method_full_desc: 'Deep + physical disk health check. Requires the administrator password.',
     cmp_method_full_desc_win: 'Deep + physical disk health check. Requires Windows consent.',
     cmp_confirm_fast_title: 'Quick Comparison',
-    cmp_confirm_fast_body: 'GEMINUS will compare file names, sizes and modification dates only. It won\'t read file content. This is the fastest method, but if two files have the same size and the same modification date they\'ll be considered identical even if the content differs.',
+    cmp_confirm_fast_body: 'DiskTwins will compare file names, sizes and modification dates only. It won\'t read file content. This is the fastest method, but if two files have the same size and the same modification date they\'ll be considered identical even if the content differs.',
     cmp_confirm_deep_title: 'Deep Comparison',
-    cmp_confirm_deep_body: 'GEMINUS will read from beginning to end the contents of every file that looks the same — same name, same size, same date — to be sure they really are identical inside. It\'s a slow operation, it can take hours on large disks, but offers maximum reliability.',
+    cmp_confirm_deep_body: 'DiskTwins will read from beginning to end the contents of every file that looks the same — same name, same size, same date — to be sure they really are identical inside. It\'s a slow operation, it can take hours on large disks, but offers maximum reliability.',
     cmp_confirm_full_title: 'Full Comparison',
-    cmp_confirm_full_body: 'GEMINUS will first check the physical health of the disks (administrator password required) and then run the Deep Comparison reading content byte-by-byte. It\'s the most thorough verification.',
-    cmp_confirm_full_body_win: 'GEMINUS will first check the physical health of the disks (Windows will ask for your consent) and then run the Deep Comparison reading content byte-by-byte. It\'s the most thorough verification.',
+    cmp_confirm_full_body: 'DiskTwins will first check the physical health of the disks (administrator password required) and then run the Deep Comparison reading content byte-by-byte. It\'s the most thorough verification.',
+    cmp_confirm_full_body_win: 'DiskTwins will first check the physical health of the disks (Windows will ask for your consent) and then run the Deep Comparison reading content byte-by-byte. It\'s the most thorough verification.',
     cmp_btn_proceed: 'Proceed',
     cmp_fast_mode_banner: 'Quick Comparison: two files with matching size and modification date were considered identical without reading their content. For maximum reliability, re-run the comparison in Deep or Full mode.',
     // ─── Pre-compare disk diagnosis ───
     diag_sudo_title: 'Disk health check',
-    diag_sudo_msg: 'Before comparing the disks, GEMINUS can verify their health. Administrator password required. Do you allow it?',
+    diag_sudo_msg: 'Before comparing the disks, DiskTwins can verify their health. Administrator password required. Do you allow it?',
     diag_nosudo_title: 'Health check unavailable',
-    diag_nosudo_msg: 'Without the administrator password GEMINUS cannot check the physical health of the disks. You can continue with the Deep Comparison only (byte-by-byte content read, no health check) or go back to the method selection.',
-    diag_sudo_msg_win: 'Before comparing the disks, GEMINUS can verify their health. Windows will ask for your consent. Shall I proceed?',
-    diag_nosudo_msg_win: 'Without your consent GEMINUS cannot check the physical health of the disks. You can continue with the Deep Comparison only (byte-by-byte content read, no health check) or go back to the method selection.',
+    diag_nosudo_msg: 'Without the administrator password DiskTwins cannot check the physical health of the disks. You can continue with the Deep Comparison only (byte-by-byte content read, no health check) or go back to the method selection.',
+    diag_sudo_msg_win: 'Before comparing the disks, DiskTwins can verify their health. Windows will ask for your consent. Shall I proceed?',
+    diag_nosudo_msg_win: 'Without your consent DiskTwins cannot check the physical health of the disks. You can continue with the Deep Comparison only (byte-by-byte content read, no health check) or go back to the method selection.',
     diag_running_title: 'Diagnosis in progress...',
     diag_running_msg: 'Checking disk health. Please wait a few seconds...',
     diag_result_ok_title: '✅ Disks are healthy',
@@ -2119,7 +2120,7 @@ const I18N = {
     diag_btn_no_cancel: 'No, cancel',
     diag_deep_redirect: 'For a deep SMART check of the disk, use the 🩺 icon on the disk block.',
     smart_missing_title: 'Diagnostic tool not installed',
-    smart_missing_msg: 'To check disk health GEMINUS relies on a free external program, installed once and for all. Without it comparison and copy work just the same: only the disk health check is missing.',
+    smart_missing_msg: 'To check disk health DiskTwins relies on a free external program, installed once and for all. Without it comparison and copy work just the same: only the disk health check is missing.',
     smart_missing_steps_windows: 'Press Download: the official page opens in your browser.\nDownload the Windows file, the one ending in "setup.exe".\nOpen it with a double click and go through to the end.\nCome back here and press Retry.',
     smart_missing_steps_linux: 'Open your system\'s software manager.\nSearch for "smartmontools" and install it.\nCome back here and press Retry.',
     smart_missing_still: 'Still not finding it. If you have just installed it, wait for the installation to finish and retry.',
@@ -2132,7 +2133,7 @@ const I18N = {
     deep_confirm_msg: 'You are about to launch the internal SMART test on Drive {side} ({device}). It may take hours. The disk remains usable during the test, but slower. Proceed?',
     deep_confirm_est: 'Estimated time: {time}.',
     deep_confirm_start: 'Start check',
-    report_header: '=== GEMINUS — Extended Health Check ===\nDevice: {device}\nDate: {date}',
+    report_header: '=== DiskTwins — Extended Health Check ===\nDevice: {device}\nDate: {date}',
     deep_done_title: '✅ Extended Health Check completed',
     deep_done_msg: 'Extended Health Check of Drive {side} completed. Result saved to {path}.',
     deep_fail_title: '❌ Extended Health Check failed',
@@ -2187,14 +2188,14 @@ const I18N = {
     badge_diff: 'Modified', badge_only_a: 'Only in A', badge_only_b: 'Only in B',
     // ─── Help / in-app manual ───
     btn_help: '❓ Help',
-    help_title: 'GEMINUS manual',
+    help_title: 'DiskTwins manual',
     help_tab_about: 'About',
     help_tab_usage: 'How to use',
     help_tab_disks: 'Slow or faulty disks',
     help_tab_format: 'Formatting',
     help_tab_faq: 'FAQ',
     // ─── Onboarding (every launch) ───
-    onb_title: 'Welcome to GEMINUS',
+    onb_title: 'Welcome to DiskTwins',
     onb_prev: '← Back',
     onb_next: 'Next →',
     onb_done: 'Let\'s go',
@@ -2208,8 +2209,9 @@ const I18N = {
 // ══════════════════════════════════════════════════════════
 const HELP_CONTENT_IT = {
   about: `
-    <h3>Cosa È GEMINUS</h3>
-    <p>GEMINUS <strong>confronta due dischi o due cartelle</strong>. Mostra fianco a fianco quali file sono uguali, quali sono stati modificati, quali esistono solo da una parte.</p>
+    <p class="mod-notice"><strong>Versione modificata.</strong> DiskTwins è una versione modificata di <strong>GEMINUS</strong>, il programma di lucixdev (https://codeberg.org/lucixdev/geminus). Non è il programma originale e non è approvata né pubblicata dall'autore. Le modifiche, del 2026, sono di milaleo; il programma resta sotto la stessa licenza GPL v3.</p>
+    <h3>Cosa È DiskTwins</h3>
+    <p>DiskTwins <strong>confronta due dischi o due cartelle</strong>. Mostra fianco a fianco quali file sono uguali, quali sono stati modificati, quali esistono solo da una parte.</p>
     <p>L'app è la stessa su Linux e su Windows. Le poche cose che cambiano da un sistema all'altro sono segnalate qui dentro con <em>su Linux</em> e <em>su Windows</em>: dove non c'è nessuna indicazione, vale per tutti e due.</p>
     <h3>A cosa serve</h3>
     <ul>
@@ -2220,10 +2222,10 @@ const HELP_CONTENT_IT = {
       <li>Cancellare dal backup quello che nell'originale non c'è più.</li>
     </ul>
     <h3>Come lavora</h3>
-    <p>Quando clicchi <strong>▶ Confronta</strong>, GEMINUS ti chiede in che modo vuoi confrontare i dischi. Ci sono tre metodi:</p>
+    <p>Quando clicchi <strong>▶ Confronta</strong>, DiskTwins ti chiede in che modo vuoi confrontare i dischi. Ci sono tre metodi:</p>
     <ul>
-      <li><strong>Veloce</strong>. GEMINUS guarda i nomi dei file, le dimensioni e le date. Rapido, ma se due file hanno stessa dimensione e stessa data li considera uguali anche se dentro sono diversi.</li>
-      <li><strong>Approfondito</strong>. GEMINUS legge anche il contenuto dei file che sembrano uguali (stesso nome, stessa dimensione, stessa data), per essere sicuro che siano davvero identici dentro. I file diversi li riconosce subito senza leggerli. Lento, ma sicuro.</li>
+      <li><strong>Veloce</strong>. DiskTwins guarda i nomi dei file, le dimensioni e le date. Rapido, ma se due file hanno stessa dimensione e stessa data li considera uguali anche se dentro sono diversi.</li>
+      <li><strong>Approfondito</strong>. DiskTwins legge anche il contenuto dei file che sembrano uguali (stesso nome, stessa dimensione, stessa data), per essere sicuro che siano davvero identici dentro. I file diversi li riconosce subito senza leggerli. Lento, ma sicuro.</li>
       <li><strong>Completo</strong>. Come Approfondito, e in più controlla lo stato di salute fisica dei dischi prima di partire. Per farlo chiede un permesso: <em>su Linux</em> la password di amministratore, <em>su Windows</em> il consenso nella finestra del sistema.</li>
     </ul>
     <h3>Quando usare quale metodo</h3>
@@ -2231,7 +2233,7 @@ const HELP_CONTENT_IT = {
     <p>Per verificare un backup importante (le foto di anni, documenti che ti servono davvero): <strong>Approfondito</strong>.</p>
     <p>Quando hai dubbi sul disco (USB vecchia, sospetto che qualcosa non vada): <strong>Completo</strong>.</p>
     <h3>Tecnologia</h3>
-    <p>GEMINUS è scritto in Rust col framework Tauri. È software libero distribuito sotto licenza GPL v3. I dati restano sempre sul tuo computer: niente viene inviato in rete.</p>
+    <p>DiskTwins è scritto in Rust col framework Tauri. È software libero distribuito sotto licenza GPL v3. I dati restano sempre sul tuo computer: niente viene inviato in rete.</p>
     <p class="help-action-row">Vuoi rivedere la presentazione iniziale? <a class="help-replay-link" onclick="replayOnboarding()">Rivedi presentazione</a></p>
   `,
   usage: `
@@ -2239,12 +2241,12 @@ const HELP_CONTENT_IT = {
     <ol>
       <li>Clicca sul blocco <strong>Disco A</strong> in alto a sinistra. Si apre il selettore cartella: <code>⏏ Dispositivi</code> elenca i dischi collegati, <code>🏠 Home</code> porta alla tua cartella personale. Scegli una cartella e premi <strong>Scegli questa cartella</strong>.</li>
       <li>Stessa cosa col blocco <strong>Disco B</strong> a destra.</li>
-      <li>Clicca <strong>▶ Confronta</strong> al centro. GEMINUS ti chiede quale metodo usare: <strong>Veloce</strong>, <strong>Approfondito</strong> o <strong>Completo</strong>. Scegli, leggi la conferma, premi <strong>Procedi</strong>.</li>
+      <li>Clicca <strong>▶ Confronta</strong> al centro. DiskTwins ti chiede quale metodo usare: <strong>Veloce</strong>, <strong>Approfondito</strong> o <strong>Completo</strong>. Scegli, leggi la conferma, premi <strong>Procedi</strong>.</li>
     </ol>
     <p>L'elenco che appare sotto <code>⏏ Dispositivi</code> non è una cartella e non si può confermare: entra in un disco e scegli lì dentro. Se non ci sono dischi esterni collegati quell'elenco resta vuoto: la radice e la tua cartella personale non stanno lì, hanno i loro pulsanti.</p>
     <p><em>Su Linux</em> il selettore ha anche <code>/ Root</code>, la radice del sistema. <em>Su Windows</em> quel pulsante non c'è, perché una radice unica non esiste: i dischi sono le unità (<code>C:</code>, <code>D:</code>, …) e le trovi sotto <code>⏏ Dispositivi</code>.</p>
-    <p>Se hai scelto <strong>Completo</strong>, GEMINUS chiede il permesso di controllare la salute dei dischi — <em>su Linux</em> la password di amministratore, <em>su Windows</em> il consenso nella finestra del sistema. Se non lo dai, puoi continuare col solo Confronto Approfondito o tornare alla scelta del metodo.</p>
-    <p>Il controllo della salute si appoggia a un programma esterno gratuito, che si installa una volta sola. Se non lo trova, GEMINUS te lo dice e ti spiega come installarlo nel modo del tuo sistema; puoi anche continuare senza, e allora il Completo vale come Approfondito. Confronto e copia non dipendono da quel programma: funzionano comunque.</p>
+    <p>Se hai scelto <strong>Completo</strong>, DiskTwins chiede il permesso di controllare la salute dei dischi — <em>su Linux</em> la password di amministratore, <em>su Windows</em> il consenso nella finestra del sistema. Se non lo dai, puoi continuare col solo Confronto Approfondito o tornare alla scelta del metodo.</p>
+    <p>Il controllo della salute si appoggia a un programma esterno gratuito, che si installa una volta sola. Se non lo trova, DiskTwins te lo dice e ti spiega come installarlo nel modo del tuo sistema; puoi anche continuare senza, e allora il Completo vale come Approfondito. Confronto e copia non dipendono da quel programma: funzionano comunque.</p>
     <h3>Cosa vedi dopo il confronto</h3>
     <p>I due alberi affiancati mostrano il contenuto dei due dischi, riga per riga: dove un elemento manca da una parte, al suo posto compare la riga <strong>(assente)</strong>, così le due colonne restano allineate a qualsiasi profondità. Le righe sono colorate per stato: <strong>azzurro</strong> = solo in A, <strong>verde</strong> = solo in B, <strong>arancione</strong> = modificato, e un badge le etichetta una per una. La barra in basso riassume i conteggi.</p>
     <p>Le cartelle riflettono lo stato di ciò che contengono: se anche un solo file dentro una cartella è diverso o manca da una parte, la cartella stessa è marcata come Modificata. Espandila per vedere cosa cambia.</p>
@@ -2255,47 +2257,47 @@ const HELP_CONTENT_IT = {
     <p>I numeri sui chip contano solo i file. Le cartelle si vedono colorate nell'albero ma non rientrano nei totali.</p>
     <h3>Copiare o spostare file</h3>
     <p>Trascina un file o una cartella da una colonna all'altra. La modalità (<code>Copia</code> o <code>Sposta</code>) si sceglie nella barra in alto.</p>
-    <p>Il rilascio porta <strong>sempre</strong> l'elemento nella sua posizione speculare sull'altro lato: stessa cartella, stesso posto. Non conta su quale riga lo lasci cadere — GEMINUS allinea i due lati, non riorganizza il disco.</p>
+    <p>Il rilascio porta <strong>sempre</strong> l'elemento nella sua posizione speculare sull'altro lato: stessa cartella, stesso posto. Non conta su quale riga lo lasci cadere — DiskTwins allinea i due lati, non riorganizza il disco.</p>
     <p><strong>Più elementi insieme:</strong> <code>Ctrl</code>+click aggiunge o toglie una riga dalla selezione, <code>Maiusc</code>+click prende tutte le righe fra l'ultima cliccata e questa. Si seleziona in una colonna sola. Trascinando una riga selezionata porti tutto il gruppo, ognuno nella sua posizione speculare; se nel gruppo c'è una cartella, quello che sta dentro di lei viaggia con lei. Si porta solo quello che vedi: cambiare filtro, cercare o chiudere una cartella toglie dalla selezione le righe che spariscono. <code>Esc</code> o un click semplice su un file la azzerano; un click semplice su una cartella la apre o la chiude e lascia la selezione com'è, così puoi prendere righe da più cartelle.</p>
-    <p>Se dall'altra parte c'è già qualcosa con lo stesso nome, GEMINUS chiede solo quando c'è da perdere qualcosa. Un file che manca si copia; un file uguale (✓) si copia sopra senza domande, perché non cambia niente; una cartella che c'è già non viene sostituita: GEMINUS ci entra e ne completa il contenuto, con le stesse regole per i file che ha dentro.</p>
+    <p>Se dall'altra parte c'è già qualcosa con lo stesso nome, DiskTwins chiede solo quando c'è da perdere qualcosa. Un file che manca si copia; un file uguale (✓) si copia sopra senza domande, perché non cambia niente; una cartella che c'è già non viene sostituita: DiskTwins ci entra e ne completa il contenuto, con le stesse regole per i file che ha dentro.</p>
     <p>La domanda arriva solo per i file con lo stesso nome ma <strong>diversi</strong>, perché sovrascriverli cancella per sempre la versione che c'era. Per un file trascinato da solo: <strong>Sovrascrivi</strong>, <strong>Rinomina</strong> o <strong>Annulla</strong>. Per un gruppo o una cartella, prima di cominciare, una finestra sola li elenca tutti, anche quelli dentro le cartelle: <strong>Sovrascrivi tutti</strong>, <strong>Salta questi</strong> (restano come sono, tutto il resto passa), <strong>Uno per uno</strong> (per ciascuno Sovrascrivi, Rinomina o Annulla) o <strong>Annulla</strong> (non parte niente). Poi l'operazione va fino in fondo da sola; <code>Annulla</code> nella finestra di avanzamento la ferma, e quello che è già arrivato resta.</p>
     <p>Anche i file protetti da scrittura vengono rimpiazzati. L'unico caso in cui non ci riesce è quando è la cartella di destinazione a non lasciarsi scrivere, e allora te lo dice invece di far finta.</p>
     <p>L'albero si aggiorna man mano: ogni file copiato, spostato o cancellato cambia subito stato nella vista. Non serve rilanciare il confronto.</p>
     <p><strong>Doppio click</strong> su un file lo apre col programma predefinito del sistema.</p>
-    <p>I collegamenti (🔗) non si trascinano. E se trascini una cartella che ne contiene, i collegamenti dentro <strong>non vengono copiati</strong>: GEMINUS li salta.</p>
+    <p>I collegamenti (🔗) non si trascinano. E se trascini una cartella che ne contiene, i collegamenti dentro <strong>non vengono copiati</strong>: DiskTwins li salta.</p>
     <p>A fine operazione la barra di stato in basso dice com'è andata: copiato, spostato, saltato, annullato, o copia parziale col numero dei file rimasti indietro. Se qualcosa non è andato per intero — una cartella copiata a metà, collegamenti saltati, un'operazione fermata — si apre anche un riepilogo con i conti e la destinazione.</p>
     <p>In modalità <code>Sposta</code>, se qualche file di una cartella è rimasto indietro, <strong>la cartella di partenza non viene rimossa</strong>: sarebbe l'unico modo di perdere quello che non è passato. La ritrovi dov'era e intera, anche con i file che sono già arrivati dall'altra parte: dalla partenza non si toglie niente, e il riepilogo lo dice.</p>
     <h3>Cancellare file</h3>
-    <p><strong>Tasto destro</strong> su una riga → <strong>Cancella</strong>. GEMINUS chiede conferma dicendo il nome dell'elemento e che <strong>verrà eliminato definitivamente</strong>. Il bottone già pronto è Annulla: per cancellare devi scegliere tu.</p>
+    <p><strong>Tasto destro</strong> su una riga → <strong>Cancella</strong>. DiskTwins chiede conferma dicendo il nome dell'elemento e che <strong>verrà eliminato definitivamente</strong>. Il bottone già pronto è Annulla: per cancellare devi scegliere tu.</p>
     <p>Su una cartella la cancellazione porta via <strong>tutto quello che c'è dentro</strong>, sottocartelle comprese, in un colpo solo. La conferma nomina la cartella, non elenca il contenuto: guarda cosa c'è dentro prima di confermare.</p>
-    <p>Può anche fermarsi a metà — un file protetto, una cartella che non si lascia toccare. In quel caso GEMINUS te lo dice, e la vista si rifà su quello che è rimasto davvero sul disco: quello che vedi dopo è la situazione vera, non quella di prima.</p>
+    <p>Può anche fermarsi a metà — un file protetto, una cartella che non si lascia toccare. In quel caso DiskTwins te lo dice, e la vista si rifà su quello che è rimasto davvero sul disco: quello che vedi dopo è la situazione vera, non quella di prima.</p>
     <p>E definitivamente vuol dire definitivamente: <strong>niente cestino, nessun ripristino</strong>. È una scelta, non una dimenticanza — il cestino del sistema, da qui, non spostava niente e non avvisava, e un cestino interno all'app avrebbe promesso una sicurezza che non poteva mantenere. Meglio una conferma chiara di una rete che non tiene.</p>
     <p>Nell'uso normale la rete è il confronto stesso: un file cancellato per sbaglio dal backup esiste ancora sull'originale, e un confronto più un trascinamento lo rimettono a posto. Quello che non torna è ciò che cancelli dalla parte in cui era l'unica copia: prima di confermare, guarda su quale colonna sei.</p>
     <p>Sui collegamenti (🔗) la cancellazione rimuove il collegamento e non tocca il file o la cartella a cui punta.</p>
     <h3>Quando un file dà problemi</h3>
-    <p>Se durante una copia o uno spostamento un file non si riesce a leggere o scrivere, GEMINUS si ferma e apre una finestra che dice <strong>dov'è l'elemento</strong>, <strong>cosa non è riuscito</strong> (leggere dal disco di partenza, scrivere su quello di destinazione, creare una cartella, leggere il contenuto di una cartella) e <strong>perché</strong>: i permessi non lo consentono, lo spazio è esaurito, il disco di destinazione è in sola lettura, il file è aperto in un altro programma, il disco non risponde più, il disco segnala un errore fisico. In coda c'è anche il testo grezzo del sistema, per chi lo vuole leggere.</p>
+    <p>Se durante una copia o uno spostamento un file non si riesce a leggere o scrivere, DiskTwins si ferma e apre una finestra che dice <strong>dov'è l'elemento</strong>, <strong>cosa non è riuscito</strong> (leggere dal disco di partenza, scrivere su quello di destinazione, creare una cartella, leggere il contenuto di una cartella) e <strong>perché</strong>: i permessi non lo consentono, lo spazio è esaurito, il disco di destinazione è in sola lettura, il file è aperto in un altro programma, il disco non risponde più, il disco segnala un errore fisico. In coda c'è anche il testo grezzo del sistema, per chi lo vuole leggere.</p>
     <p>Poi ti chiede cosa fare: <strong>Riprova</strong> (tenta di nuovo lo stesso file, utile se il blocco era temporaneo), <strong>Salta</strong> (lascia perdere quel file e va avanti con gli altri), <strong>Annulla</strong> (ferma tutto subito). I file già copiati prima dell'errore restano dove sono, e quello che non è riuscito non lascia niente in destinazione: quello che c'era prima è ancora lì.</p>
     <p>Una cartella che ha avuto un file saltato dentro non viene mostrata come allineata: il suo stato lo decide il contenuto, non l'esito della copia.</p>
     <h3>Verifica Salute Estesa</h3>
     <p>Appena scegli un disco, sul suo blocco compare l'icona 🩺: è la <strong>Verifica Salute Estesa</strong>, e la puoi lanciare quando vuoi — non serve che il controllo rapido abbia segnalato qualcosa.</p>
-    <p>GEMINUS avvia il test interno del disco, quello che i dischi chiamano SMART: si autodiagnostica il disco stesso, GEMINUS aspetta. Il disco resta utilizzabile durante il test, ma più lento, e puoi annullare in qualsiasi momento.</p>
-    <p>Quanto ci vuole lo dichiara il disco, e possono essere ore. Quella durata GEMINUS la legge quando fa un confronto <strong>Completo</strong>: se su quel disco ne hai già fatto uno, la finestra ti dice quanto manca e ti avvisa se il test sta sforando la stima; se non ne hai mai fatti, ti dice solo da quanto tempo sta lavorando.</p>
-    <p>A test finito il risultato viene salvato come file di testo <strong>nella cartella dei download</strong>, e GEMINUS ti dice il percorso esatto.</p>
-    <p>Anche qui serve il permesso, ma qui lo chiede direttamente il sistema — nel Completo era GEMINUS a chiedertelo prima con una sua finestra. Se lo rifiuti, la verifica non parte e non succede nient'altro. E se il programma esterno non è installato non c'è niente da avviare: la finestra ti spiega come installarlo, e da lì si torna indietro qualunque bottone premi.</p>
+    <p>DiskTwins avvia il test interno del disco, quello che i dischi chiamano SMART: si autodiagnostica il disco stesso, DiskTwins aspetta. Il disco resta utilizzabile durante il test, ma più lento, e puoi annullare in qualsiasi momento.</p>
+    <p>Quanto ci vuole lo dichiara il disco, e possono essere ore. Quella durata DiskTwins la legge quando fa un confronto <strong>Completo</strong>: se su quel disco ne hai già fatto uno, la finestra ti dice quanto manca e ti avvisa se il test sta sforando la stima; se non ne hai mai fatti, ti dice solo da quanto tempo sta lavorando.</p>
+    <p>A test finito il risultato viene salvato come file di testo <strong>nella cartella dei download</strong>, e DiskTwins ti dice il percorso esatto.</p>
+    <p>Anche qui serve il permesso, ma qui lo chiede direttamente il sistema — nel Completo era DiskTwins a chiedertelo prima con una sua finestra. Se lo rifiuti, la verifica non parte e non succede nient'altro. E se il programma esterno non è installato non c'è niente da avviare: la finestra ti spiega come installarlo, e da lì si torna indietro qualunque bottone premi.</p>
     <h3>Annullare un'operazione</h3>
     <p>Durante la scansione e il confronto c'è sempre una finestra col bottone <code>Annulla</code>. Nelle copie e negli spostamenti compare quando c'è qualcosa da aspettare — una cartella o un file grande: per un file piccolo l'operazione è finita prima che serva fermarla.</p>
     <p>L'annullamento è pulito: la copia a metà viene buttata via e il file che stava in destinazione resta esattamente com'era, intatto. Quelli già finiti restano dove sono, e la vista mostra la situazione vera — non quella che ci si aspettava prima di fermarsi.</p>
   `,
   disks: `
     <h3>Cosa sono i settori difettosi</h3>
-    <p>Ogni disco è diviso fisicamente in piccole zone chiamate <strong>settori</strong>. Col tempo, alcune zone smettono di funzionare correttamente (settori difettosi, in inglese <em>bad sectors</em>). Quando GEMINUS prova a leggere un file che si trova su un settore difettoso, il disco può rispondere lentamente, dare errore, o non rispondere affatto.</p>
+    <p>Ogni disco è diviso fisicamente in piccole zone chiamate <strong>settori</strong>. Col tempo, alcune zone smettono di funzionare correttamente (settori difettosi, in inglese <em>bad sectors</em>). Quando DiskTwins prova a leggere un file che si trova su un settore difettoso, il disco può rispondere lentamente, dare errore, o non rispondere affatto.</p>
     <h3>Messaggio "In attesa del disco..."</h3>
-    <p>Compare durante la lettura del contenuto dei file quando il disco non risponde da qualche secondo. <strong>Non è un errore</strong>: GEMINUS sta aspettando con pazienza. Se il disco si sblocca, la barra torna a "Lettura contenuto dei file..." e prosegue. Cosa fare: niente, lascia lavorare. Cosa NON fare: non chiudere la finestra, non scollegare il disco.</p>
-    <p>Questo non capita in modalità Veloce: in Veloce GEMINUS non legge il contenuto dei file, quindi non resta mai in attesa del disco.</p>
+    <p>Compare durante la lettura del contenuto dei file quando il disco non risponde da qualche secondo. <strong>Non è un errore</strong>: DiskTwins sta aspettando con pazienza. Se il disco si sblocca, la barra torna a "Lettura contenuto dei file..." e prosegue. Cosa fare: niente, lascia lavorare. Cosa NON fare: non chiudere la finestra, non scollegare il disco.</p>
+    <p>Questo non capita in modalità Veloce: in Veloce DiskTwins non legge il contenuto dei file, quindi non resta mai in attesa del disco.</p>
     <h3>Contatore "illeggibili"</h3>
-    <p>A fine confronto, nello status: <code>(N illeggibili)</code>. Sono i file che GEMINUS non è riuscito a leggere: il disco non ha risposto entro il tempo limite, oppure ha dato errore, oppure i permessi non lo consentivano. GEMINUS li ha marcati come illeggibili e ha continuato col file successivo. Filtra l'albero col chip <code>Illeggibili</code> per vedere quali sono.</p>
+    <p>A fine confronto, nello status: <code>(N illeggibili)</code>. Sono i file che DiskTwins non è riuscito a leggere: il disco non ha risposto entro il tempo limite, oppure ha dato errore, oppure i permessi non lo consentivano. DiskTwins li ha marcati come illeggibili e ha continuato col file successivo. Filtra l'albero col chip <code>Illeggibili</code> per vedere quali sono.</p>
     <h3>Contatore "saltati per disco bloccato"</h3>
-    <p>Compare solo nei casi gravi: <code>(N saltati per disco bloccato)</code>. Significa che il disco si è bloccato così tante volte (8 file falliti) che GEMINUS ha smesso di insistere e ha saltato i file rimanenti per non sprecare tempo e risorse.</p>
+    <p>Compare solo nei casi gravi: <code>(N saltati per disco bloccato)</code>. Significa che il disco si è bloccato così tante volte (8 file falliti) che DiskTwins ha smesso di insistere e ha saltato i file rimanenti per non sprecare tempo e risorse.</p>
     <h3>Cosa fare quando vedi questi numeri</h3>
     <ul>
       <li><strong>Pochi illeggibili (1-3)</strong>: probabilmente settori difettosi isolati. Fai un backup urgente dei file ancora leggibili su un altro disco.</li>
@@ -2306,8 +2308,8 @@ const HELP_CONTENT_IT = {
   format: `
     <div class="help-warn">⚠ Formattare un disco cancella tutti i dati. Verifica DUE VOLTE quale disco stai formattando prima di procedere. Sbagliare disco significa perdere tutto.</div>
     <h3>Prima di tutto — salvare i dati recuperabili</h3>
-    <p><strong>Prima di formattare, copia altrove tutto ciò che è ancora leggibile.</strong> La formattazione cancella tutto, anche dai settori sani. Usa GEMINUS o il gestore file del sistema per copiare i dati su un altro disco. Solo quando sei sicuro di non avere più nulla da salvare, procedi.</p>
-    <p>Da qui in avanti le due strade sono diverse: la formattazione è una cosa che fa il sistema, non GEMINUS.</p>
+    <p><strong>Prima di formattare, copia altrove tutto ciò che è ancora leggibile.</strong> La formattazione cancella tutto, anche dai settori sani. Usa DiskTwins o il gestore file del sistema per copiare i dati su un altro disco. Solo quando sei sicuro di non avere più nulla da salvare, procedi.</p>
+    <p>Da qui in avanti le due strade sono diverse: la formattazione è una cosa che fa il sistema, non DiskTwins.</p>
     <h3>Su Windows</h3>
     <p>Serve solo Esplora file.</p>
     <ol>
@@ -2351,29 +2353,30 @@ sudo mount /dev/sdX1 /mnt/miodisco</code></pre>
     <p>Controlla che lo spazio totale sia quello atteso e che il filesystem sia quello giusto.</p>
   `,
   faq: `
-    <h3>GEMINUS modifica i miei file?</h3>
-    <p>Non da solo. Il confronto è in sola lettura: guarda e non tocca niente. I file cambiano solo quando lo chiedi tu, e sono due i modi: trascinare qualcosa da una colonna all'altra, o cancellare col tasto destro. Nel primo caso, se dall'altra parte c'è un file con lo stesso nome ma diverso, GEMINUS chiede sempre cosa fare prima di sovrascriverlo; nel secondo chiede conferma, e la cancellazione è definitiva.</p>
+    <h3>DiskTwins modifica i miei file?</h3>
+    <p>Non da solo. Il confronto è in sola lettura: guarda e non tocca niente. I file cambiano solo quando lo chiedi tu, e sono due i modi: trascinare qualcosa da una colonna all'altra, o cancellare col tasto destro. Nel primo caso, se dall'altra parte c'è un file con lo stesso nome ma diverso, DiskTwins chiede sempre cosa fare prima di sovrascriverlo; nel secondo chiede conferma, e la cancellazione è definitiva.</p>
     <h3>I miei dati vengono inviati su internet?</h3>
-    <p>No. GEMINUS funziona completamente offline. Non c'è telemetria, non c'è cloud, non c'è connessione di rete. Tutto resta sul tuo computer.</p>
+    <p>No. DiskTwins funziona completamente offline. Non c'è telemetria, non c'è cloud, non c'è connessione di rete. Tutto resta sul tuo computer.</p>
     <h3>Quanto tempo ci vuole per un confronto?</h3>
     <p>Veloce è veloce, anche su dischi grandi. Approfondito può richiedere ore su dischi grandi, perché legge il contenuto dei file. Completo è come Approfondito, più la verifica della salute. Se il disco ha problemi, i tempi si allungano.</p>
-    <h3>Posso usare GEMINUS su Windows o Mac?</h3>
+    <h3>Posso usare DiskTwins su Windows o Mac?</h3>
     <p>Su Linux e su Windows sì — su Windows serve la versione 10 22H2 o successiva, a 64 bit. Su Mac no.</p>
     <h3>Cosa fa esattamente "Verifica Salute Estesa"?</h3>
-    <p>Avvia il test interno del disco: si autodiagnostica il disco stesso, GEMINUS aspetta e riporta l'esito. La durata la dichiara il disco e può essere di ore. Il risultato viene salvato come file di testo nella cartella dei download.</p>
+    <p>Avvia il test interno del disco: si autodiagnostica il disco stesso, DiskTwins aspetta e riporta l'esito. La durata la dichiara il disco e può essere di ore. Il risultato viene salvato come file di testo nella cartella dei download.</p>
     <h3>Posso annullare durante un confronto lungo?</h3>
     <p>Sì. La finestra del confronto ha sempre un bottone <strong>Annulla</strong>. L'app si ferma in modo pulito, senza lasciare file a metà.</p>
     <h3>Perché alcune cartelle sono "escluse"?</h3>
-    <p>GEMINUS salta le cartelle che cambiano continuamente da sole, dove il confronto non direbbe niente di utile e costerebbe tempo: <code>.git</code>, <code>node_modules</code>, <code>target</code>, <code>.cargo</code>, <code>.rustup</code>, <code>.venv</code>, <code>.cache</code>, <code>__pycache__</code>, cestino. <em>Su Windows</em> salta anche le cartelle che il sistema tiene per sé (<code>$RECYCLE.BIN</code>, <code>System Volume Information</code>, <code>Config.Msi</code>), quelle che stanno nella radice di ogni unità: non sono tue, e confrontarle non dice niente sul tuo backup. Conta il nome: una cartella tua chiamata così verrebbe saltata comunque. Vale per il confronto, non per la copia: se trascini una cartella che ne contiene una di queste, viene copiata per intero — copiare una cartella deve darti la cartella, non una versione con dei pezzi in meno.</p>
+    <p>DiskTwins salta le cartelle che cambiano continuamente da sole, dove il confronto non direbbe niente di utile e costerebbe tempo: <code>.git</code>, <code>node_modules</code>, <code>target</code>, <code>.cargo</code>, <code>.rustup</code>, <code>.venv</code>, <code>.cache</code>, <code>__pycache__</code>, cestino. <em>Su Windows</em> salta anche le cartelle che il sistema tiene per sé (<code>$RECYCLE.BIN</code>, <code>System Volume Information</code>, <code>Config.Msi</code>), quelle che stanno nella radice di ogni unità: non sono tue, e confrontarle non dice niente sul tuo backup. Conta il nome: una cartella tua chiamata così verrebbe saltata comunque. Vale per il confronto, non per la copia: se trascini una cartella che ne contiene una di queste, viene copiata per intero — copiare una cartella deve darti la cartella, non una versione con dei pezzi in meno.</p>
     <h3>Quanto è affidabile il Confronto Approfondito?</h3>
-    <p>Molto. GEMINUS legge il contenuto dei due file dall'inizio alla fine: se differiscono anche di un solo byte, lo vede. Il caso in cui due file diversi vengano dichiarati uguali è così improbabile che non capiterà in nessuna vita umana.</p>
+    <p>Molto. DiskTwins legge il contenuto dei due file dall'inizio alla fine: se differiscono anche di un solo byte, lo vede. Il caso in cui due file diversi vengano dichiarati uguali è così improbabile che non capiterà in nessuna vita umana.</p>
   `,
 };
 
 const HELP_CONTENT_EN = {
   about: `
-    <h3>What GEMINUS is</h3>
-    <p>GEMINUS <strong>compares two disks or two folders</strong>. It shows side by side which files are identical, which have been modified, which exist on only one side.</p>
+    <p class="mod-notice"><strong>Modified version.</strong> DiskTwins is a modified version of <strong>GEMINUS</strong>, the program by lucixdev (https://codeberg.org/lucixdev/geminus). It is not the original program and is neither approved nor published by its author. The changes, made in 2026, are by milaleo; the program remains under the same GPL v3 licence.</p>
+    <h3>What DiskTwins is</h3>
+    <p>DiskTwins <strong>compares two disks or two folders</strong>. It shows side by side which files are identical, which have been modified, which exist on only one side.</p>
     <p>The app is the same on Linux and on Windows. The few things that differ between the two systems are marked in here with <em>on Linux</em> and <em>on Windows</em>: where there's no marker, it holds for both.</p>
     <h3>What it's for</h3>
     <ul>
@@ -2384,10 +2387,10 @@ const HELP_CONTENT_EN = {
       <li>Delete from the backup what no longer exists in the source.</li>
     </ul>
     <h3>How it works</h3>
-    <p>When you click <strong>▶ Compare</strong>, GEMINUS asks how you want to compare the disks. There are three methods:</p>
+    <p>When you click <strong>▶ Compare</strong>, DiskTwins asks how you want to compare the disks. There are three methods:</p>
     <ul>
-      <li><strong>Quick</strong>. GEMINUS looks at file names, sizes and dates. Fast, but if two files have the same size and the same date it treats them as identical even if they're different inside.</li>
-      <li><strong>Deep</strong>. GEMINUS also reads the contents of files that look the same (same name, same size, same date), to be sure they really are identical inside. Files that differ it spots right away without reading them. Slow, but reliable.</li>
+      <li><strong>Quick</strong>. DiskTwins looks at file names, sizes and dates. Fast, but if two files have the same size and the same date it treats them as identical even if they're different inside.</li>
+      <li><strong>Deep</strong>. DiskTwins also reads the contents of files that look the same (same name, same size, same date), to be sure they really are identical inside. Files that differ it spots right away without reading them. Slow, but reliable.</li>
       <li><strong>Full</strong>. Like Deep, plus it checks the physical health of the disks before starting. To do that it asks for permission: <em>on Linux</em> the administrator password, <em>on Windows</em> your consent in the system's own window.</li>
     </ul>
     <h3>When to use which method</h3>
@@ -2395,7 +2398,7 @@ const HELP_CONTENT_EN = {
     <p>For checking an important backup (years of photos, documents that really matter to you): <strong>Deep</strong>.</p>
     <p>When you have doubts about the disk (old USB drive, suspicion that something isn't right): <strong>Full</strong>.</p>
     <h3>Technology</h3>
-    <p>GEMINUS is written in Rust on the Tauri framework. It is free software distributed under GPL v3. Your data always stays on your computer: nothing is sent over the network.</p>
+    <p>DiskTwins is written in Rust on the Tauri framework. It is free software distributed under GPL v3. Your data always stays on your computer: nothing is sent over the network.</p>
     <p class="help-action-row">Want to see the introduction again? <a class="help-replay-link" onclick="replayOnboarding()">Replay introduction</a></p>
   `,
   usage: `
@@ -2403,12 +2406,12 @@ const HELP_CONTENT_EN = {
     <ol>
       <li>Click on the <strong>Drive A</strong> block in the top left. The folder picker opens: <code>⏏ Devices</code> lists the connected disks, <code>🏠 Home</code> takes you to your personal folder. Pick a folder and press <strong>Select this folder</strong>.</li>
       <li>Same with the <strong>Drive B</strong> block on the right.</li>
-      <li>Click <strong>▶ Compare</strong> in the center. GEMINUS asks which method to use: <strong>Quick</strong>, <strong>Deep</strong> or <strong>Full</strong>. Choose, read the confirmation, press <strong>Proceed</strong>.</li>
+      <li>Click <strong>▶ Compare</strong> in the center. DiskTwins asks which method to use: <strong>Quick</strong>, <strong>Deep</strong> or <strong>Full</strong>. Choose, read the confirmation, press <strong>Proceed</strong>.</li>
     </ol>
     <p>The list that appears under <code>⏏ Devices</code> is not a folder and cannot be confirmed: go into a disk and choose in there. With no external disks connected that list is empty: the root and your personal folder are not in there, they have buttons of their own.</p>
     <p><em>On Linux</em> the picker also has <code>/ Root</code>, the root of the filesystem. <em>On Windows</em> that button isn't there, because a single root doesn't exist: the disks are the drives (<code>C:</code>, <code>D:</code>, …) and you find them under <code>⏏ Devices</code>.</p>
-    <p>If you chose <strong>Full</strong>, GEMINUS asks for permission to check the disks' health — <em>on Linux</em> the administrator password, <em>on Windows</em> your consent in the system's own window. If you don't grant it, you can carry on with the Deep Comparison alone or go back to the method selection.</p>
-    <p>The health check relies on a free external program, installed once and for all. If it isn't there, GEMINUS tells you and explains how to install it the way your system does it; you can also carry on without, and then Full counts as Deep. Comparing and copying don't depend on that program: they work either way.</p>
+    <p>If you chose <strong>Full</strong>, DiskTwins asks for permission to check the disks' health — <em>on Linux</em> the administrator password, <em>on Windows</em> your consent in the system's own window. If you don't grant it, you can carry on with the Deep Comparison alone or go back to the method selection.</p>
+    <p>The health check relies on a free external program, installed once and for all. If it isn't there, DiskTwins tells you and explains how to install it the way your system does it; you can also carry on without, and then Full counts as Deep. Comparing and copying don't depend on that program: they work either way.</p>
     <h3>What you see after the compare</h3>
     <p>The two side-by-side trees show the contents of the two disks, row by row: where an item is missing on one side, an <strong>(absent)</strong> row takes its place, so the columns stay aligned at any depth. Rows are color-coded by status: <strong>blue</strong> = only in A, <strong>green</strong> = only in B, <strong>orange</strong> = modified, and a badge labels each one. The status bar at the bottom summarizes the counts.</p>
     <p>Folders reflect the state of what's inside them: if even one file within a folder is different or missing on one side, the folder itself is marked Modified. Expand it to see what's changed.</p>
@@ -2419,47 +2422,47 @@ const HELP_CONTENT_EN = {
     <p>The numbers on the chips count only files. Folders appear colored in the tree but are not part of the totals.</p>
     <h3>Copy or move files</h3>
     <p>Drag a file or a folder from one column to the other. The mode (<code>Copy</code> or <code>Move</code>) is chosen in the toolbar.</p>
-    <p>Dropping <strong>always</strong> puts the item in its mirror position on the other side: same folder, same place. It doesn't matter which row you drop it on — GEMINUS aligns the two sides, it doesn't rearrange the disk.</p>
+    <p>Dropping <strong>always</strong> puts the item in its mirror position on the other side: same folder, same place. It doesn't matter which row you drop it on — DiskTwins aligns the two sides, it doesn't rearrange the disk.</p>
     <p><strong>Several items at once:</strong> <code>Ctrl</code>+click adds a row to the selection or takes it out, <code>Shift</code>+click takes every row between the last one clicked and this one. You select in one column only. Dragging a selected row carries the whole group, each item to its own mirror position; if the group holds a folder, what is inside it travels with it. Only what you see is carried: changing filter, searching or closing a folder takes the rows that disappear out of the selection. <code>Esc</code> or a plain click on a file clears it; a plain click on a folder opens or closes it and leaves the selection alone, so you can pick rows from several folders.</p>
-    <p>If something with the same name is already on the other side, GEMINUS asks only when something could be lost. A missing file is copied; an identical file (✓) is copied over without a question, since nothing changes; a folder that is already there is not replaced: GEMINUS goes into it and completes its contents, with the same rules for the files inside.</p>
+    <p>If something with the same name is already on the other side, DiskTwins asks only when something could be lost. A missing file is copied; an identical file (✓) is copied over without a question, since nothing changes; a folder that is already there is not replaced: DiskTwins goes into it and completes its contents, with the same rules for the files inside.</p>
     <p>The question comes only for files with the same name that are <strong>different</strong>, because overwriting them deletes the version that was there for good. For a file dragged alone: <strong>Overwrite</strong>, <strong>Rename</strong> or <strong>Cancel</strong>. For a group or a folder, before starting, one window lists them all, including the ones inside folders: <strong>Overwrite all</strong>, <strong>Skip these</strong> (they stay as they are, everything else goes), <strong>One by one</strong> (Overwrite, Rename or Cancel for each) or <strong>Cancel</strong> (nothing starts). Then the operation runs to the end by itself; <code>Cancel</code> in the progress window stops it, and what has already arrived stays.</p>
     <p>Write-protected files get replaced too. The one case where it can't is when the destination folder itself refuses to be written to, and then it tells you instead of pretending.</p>
     <p>The tree updates as you go: every file copied, moved, or deleted changes status in the view right away. There's no need to run the compare again.</p>
     <p><strong>Double click</strong> on a file opens it with the system's default program.</p>
-    <p>Links (🔗) can't be dragged. And if you drag a folder that contains some, the links inside <strong>are not copied</strong>: GEMINUS skips them.</p>
+    <p>Links (🔗) can't be dragged. And if you drag a folder that contains some, the links inside <strong>are not copied</strong>: DiskTwins skips them.</p>
     <p>When an operation ends, the status bar at the bottom says how it went: copied, moved, skipped, cancelled, or partial copy with the number of files left behind. If something didn't go through in full — a folder copied halfway, links skipped, an operation stopped — a summary also opens, with the counts and the destination.</p>
     <p>In <code>Move</code> mode, if any file of a folder was left behind, <strong>the source folder is not removed</strong>: that would be the one way to lose what didn't make it. You find it where it was and whole, including the files that already reached the other side: nothing is removed from the source, and the summary says so.</p>
     <h3>Delete files</h3>
-    <p><strong>Right click</strong> on a row → <strong>Delete</strong>. GEMINUS asks for confirmation, naming the item and saying it <strong>will be permanently deleted</strong>. The button already primed is Cancel: to delete, you have to choose it yourself.</p>
+    <p><strong>Right click</strong> on a row → <strong>Delete</strong>. DiskTwins asks for confirmation, naming the item and saying it <strong>will be permanently deleted</strong>. The button already primed is Cancel: to delete, you have to choose it yourself.</p>
     <p>On a folder, deleting takes away <strong>everything inside</strong>, subfolders included, in one go. The confirmation names the folder, it doesn't list the contents: look at what's in there before you confirm.</p>
-    <p>It can also stop halfway — a protected file, a folder that will not be touched. GEMINUS says so, and the view is rebuilt on what is actually still on the disk: what you see afterwards is the real situation, not the one from before.</p>
+    <p>It can also stop halfway — a protected file, a folder that will not be touched. DiskTwins says so, and the view is rebuilt on what is actually still on the disk: what you see afterwards is the real situation, not the one from before.</p>
     <p>And permanently means permanently: <strong>no recycle bin, no undo</strong>. It's a choice, not an oversight — the system's recycle bin, from here, moved nothing and warned about nothing, and a recycle bin inside the app would have promised a safety it couldn't keep. Better a clear confirmation than a net that doesn't hold.</p>
     <p>In normal use the net is the comparison itself: a file deleted from the backup by mistake still exists in the source, and one comparison plus one drag puts it back. What doesn't come back is what you delete from the side where it was the only copy: before confirming, look at which column you're on.</p>
     <p>On links (🔗), deleting removes the link and doesn't touch the file or folder it points to.</p>
     <h3>When a file has trouble</h3>
-    <p>If during a copy or move a file can't be read or written, GEMINUS stops and opens a window that says <strong>where the item is</strong>, <strong>what failed</strong> (reading from the source disk, writing to the destination disk, creating a folder, reading the contents of a folder) and <strong>why</strong>: permissions don't allow it, space has run out, the destination disk is read-only, the file is open in another program, the disk stopped responding, the disk reports a physical error. The system's raw text follows at the end, for whoever wants to read it.</p>
+    <p>If during a copy or move a file can't be read or written, DiskTwins stops and opens a window that says <strong>where the item is</strong>, <strong>what failed</strong> (reading from the source disk, writing to the destination disk, creating a folder, reading the contents of a folder) and <strong>why</strong>: permissions don't allow it, space has run out, the destination disk is read-only, the file is open in another program, the disk stopped responding, the disk reports a physical error. The system's raw text follows at the end, for whoever wants to read it.</p>
     <p>Then it asks what to do: <strong>Retry</strong> (try the same file again, useful if the block was temporary), <strong>Skip</strong> (leave that file and move on with the rest), <strong>Cancel</strong> (stop everything now). Files already copied before the error stay where they are, and the one that failed leaves nothing behind on the destination side: what was there before is still there.</p>
     <p>A folder that had a file skipped inside it is not shown as aligned: its status is decided by its contents, not by how the copy ended.</p>
     <h3>Extended Health Check</h3>
     <p>As soon as you pick a disk, the 🩺 icon appears on its block: that's the <strong>Extended Health Check</strong>, and you can launch it whenever you want — the quick check doesn't need to have flagged anything.</p>
-    <p>GEMINUS starts the disk's internal test, the one disks call SMART: the disk diagnoses itself, GEMINUS waits. The disk stays usable during the test, but slower, and you can cancel at any time.</p>
-    <p>How long it takes is declared by the disk, and it can be hours. GEMINUS reads that figure when it runs a <strong>Full</strong> comparison: if you've already run one on that disk, the window tells you how much is left and warns you if the test is overrunning its estimate; if you never have, it only tells you how long it's been working.</p>
-    <p>When the test is over the result is saved as a text file <strong>in your downloads folder</strong>, and GEMINUS tells you the exact path.</p>
-    <p>Permission is needed here too, but here the system asks for it directly — in Full it was GEMINUS asking you first, in its own window. If you refuse, the check doesn't start and nothing else happens. And if the external program isn't installed there's nothing to start: the window explains how to install it, and from there you go back whichever button you press.</p>
+    <p>DiskTwins starts the disk's internal test, the one disks call SMART: the disk diagnoses itself, DiskTwins waits. The disk stays usable during the test, but slower, and you can cancel at any time.</p>
+    <p>How long it takes is declared by the disk, and it can be hours. DiskTwins reads that figure when it runs a <strong>Full</strong> comparison: if you've already run one on that disk, the window tells you how much is left and warns you if the test is overrunning its estimate; if you never have, it only tells you how long it's been working.</p>
+    <p>When the test is over the result is saved as a text file <strong>in your downloads folder</strong>, and DiskTwins tells you the exact path.</p>
+    <p>Permission is needed here too, but here the system asks for it directly — in Full it was DiskTwins asking you first, in its own window. If you refuse, the check doesn't start and nothing else happens. And if the external program isn't installed there's nothing to start: the window explains how to install it, and from there you go back whichever button you press.</p>
     <h3>Cancel an operation</h3>
     <p>During the scan and the comparison there's always a window with a <code>Cancel</code> button. In copies and moves it appears when there's something to wait for — a folder or a large file: for a small file the operation is over before stopping it would matter.</p>
     <p>Cancelling is clean: the copy in progress is thrown away and the file that was already on the destination side stays exactly as it was, untouched. The ones already finished stay where they are, and the view shows the real situation — not the one expected before stopping.</p>
   `,
   disks: `
     <h3>What bad sectors are</h3>
-    <p>Every disk is physically divided into small zones called <strong>sectors</strong>. Over time, some zones stop working correctly (bad sectors). When GEMINUS tries to read a file located on a bad sector, the disk may respond slowly, return an error, or not respond at all.</p>
+    <p>Every disk is physically divided into small zones called <strong>sectors</strong>. Over time, some zones stop working correctly (bad sectors). When DiskTwins tries to read a file located on a bad sector, the disk may respond slowly, return an error, or not respond at all.</p>
     <h3>Message "Waiting for disk..."</h3>
-    <p>Appears while reading file contents when the disk hasn't responded for a few seconds. <strong>It's not an error</strong>: GEMINUS is waiting patiently. If the disk unblocks, the bar reverts to "Reading file contents..." and continues. What to do: nothing, let it work. What NOT to do: don't close the window, don't unplug the disk.</p>
-    <p>This doesn't happen in Quick mode: in Quick mode GEMINUS doesn't read file contents, so it never has to wait for the disk.</p>
+    <p>Appears while reading file contents when the disk hasn't responded for a few seconds. <strong>It's not an error</strong>: DiskTwins is waiting patiently. If the disk unblocks, the bar reverts to "Reading file contents..." and continues. What to do: nothing, let it work. What NOT to do: don't close the window, don't unplug the disk.</p>
+    <p>This doesn't happen in Quick mode: in Quick mode DiskTwins doesn't read file contents, so it never has to wait for the disk.</p>
     <h3>Counter "unreadable"</h3>
-    <p>At the end of the compare, in the status: <code>(N unreadable)</code>. These are the files GEMINUS could not read: the disk did not answer within the time limit, or returned an error, or permissions did not allow it. GEMINUS marked them unreadable and moved on. Filter the tree with the <code>Unreadable</code> chip to see them.</p>
+    <p>At the end of the compare, in the status: <code>(N unreadable)</code>. These are the files DiskTwins could not read: the disk did not answer within the time limit, or returned an error, or permissions did not allow it. DiskTwins marked them unreadable and moved on. Filter the tree with the <code>Unreadable</code> chip to see them.</p>
     <h3>Counter "skipped — disk stuck"</h3>
-    <p>Appears only in serious cases: <code>(N skipped — disk stuck)</code>. Means the disk got stuck so many times (8 failed files) that GEMINUS gave up and skipped the remaining files to avoid wasting time and resources.</p>
+    <p>Appears only in serious cases: <code>(N skipped — disk stuck)</code>. Means the disk got stuck so many times (8 failed files) that DiskTwins gave up and skipped the remaining files to avoid wasting time and resources.</p>
     <h3>What to do when you see these numbers</h3>
     <ul>
       <li><strong>Few unreadable (1-3)</strong>: probably isolated bad sectors. Make an urgent backup of the still-readable files to another disk.</li>
@@ -2470,8 +2473,8 @@ const HELP_CONTENT_EN = {
   format: `
     <div class="help-warn">⚠ Formatting a disk wipes all data. Double-check which disk you are formatting before you proceed. Picking the wrong disk means losing everything.</div>
     <h3>First of all — save what can be recovered</h3>
-    <p><strong>Before formatting, copy elsewhere everything still readable.</strong> Formatting wipes everything, including from healthy sectors. Use GEMINUS or your system's file manager to copy data to another disk. Only when you're sure you have nothing left to save, proceed.</p>
-    <p>From here on the two paths differ: formatting is something the system does, not GEMINUS.</p>
+    <p><strong>Before formatting, copy elsewhere everything still readable.</strong> Formatting wipes everything, including from healthy sectors. Use DiskTwins or your system's file manager to copy data to another disk. Only when you're sure you have nothing left to save, proceed.</p>
+    <p>From here on the two paths differ: formatting is something the system does, not DiskTwins.</p>
     <h3>On Windows</h3>
     <p>File Explorer is all you need.</p>
     <ol>
@@ -2515,22 +2518,22 @@ sudo mount /dev/sdX1 /mnt/mydisk</code></pre>
     <p>Check that the total space matches expectations and that the filesystem is the right one.</p>
   `,
   faq: `
-    <h3>Does GEMINUS modify my files?</h3>
-    <p>Not on its own. The compare is read-only: it looks and touches nothing. Files change only when you ask, and there are two ways: dragging something from one column to the other, or deleting with the right button. In the first case, if the other side has a file with the same name but different, GEMINUS always asks what to do before overwriting it; in the second it asks for confirmation, and the deletion is permanent.</p>
+    <h3>Does DiskTwins modify my files?</h3>
+    <p>Not on its own. The compare is read-only: it looks and touches nothing. Files change only when you ask, and there are two ways: dragging something from one column to the other, or deleting with the right button. In the first case, if the other side has a file with the same name but different, DiskTwins always asks what to do before overwriting it; in the second it asks for confirmation, and the deletion is permanent.</p>
     <h3>Is my data sent over the internet?</h3>
-    <p>No. GEMINUS works completely offline. No telemetry, no cloud, no network connection. Everything stays on your computer.</p>
+    <p>No. DiskTwins works completely offline. No telemetry, no cloud, no network connection. Everything stays on your computer.</p>
     <h3>How long does a compare take?</h3>
     <p>Quick is fast, even on large disks. Deep can take hours on large disks, because it reads the contents of the files. Full is like Deep, plus the health check. If the disk has problems, times stretch out.</p>
-    <h3>Can I use GEMINUS on Windows or Mac?</h3>
+    <h3>Can I use DiskTwins on Windows or Mac?</h3>
     <p>On Linux and on Windows, yes — on Windows it needs version 10 22H2 or later, 64 bit. On Mac, no.</p>
     <h3>What exactly does "Extended Health Check" do?</h3>
-    <p>It starts the disk's internal test: the disk diagnoses itself, GEMINUS waits and reports the outcome. How long it takes is declared by the disk, and it can be hours. The result is saved as a text file in your downloads folder.</p>
+    <p>It starts the disk's internal test: the disk diagnoses itself, DiskTwins waits and reports the outcome. How long it takes is declared by the disk, and it can be hours. The result is saved as a text file in your downloads folder.</p>
     <h3>Can I cancel during a long compare?</h3>
     <p>Yes. The comparison window always has a <strong>Cancel</strong> button. The app stops cleanly, without leaving files halfway.</p>
     <h3>Why are some folders "excluded"?</h3>
-    <p>GEMINUS skips the folders that keep changing by themselves, where comparing would say nothing useful and would cost time: <code>.git</code>, <code>node_modules</code>, <code>target</code>, <code>.cargo</code>, <code>.rustup</code>, <code>.venv</code>, <code>.cache</code>, <code>__pycache__</code>, trash. <em>On Windows</em> it also skips the folders the system keeps for itself (<code>$RECYCLE.BIN</code>, <code>System Volume Information</code>, <code>Config.Msi</code>), the ones sitting in the root of every drive: they aren't yours, and comparing them says nothing about your backup. The name is what counts: a folder of yours named like that would be skipped all the same. This is about comparing, not about copying: drag a folder that contains one of these and it is copied whole — copying a folder has to give you the folder, not a version of it with pieces missing.</p>
+    <p>DiskTwins skips the folders that keep changing by themselves, where comparing would say nothing useful and would cost time: <code>.git</code>, <code>node_modules</code>, <code>target</code>, <code>.cargo</code>, <code>.rustup</code>, <code>.venv</code>, <code>.cache</code>, <code>__pycache__</code>, trash. <em>On Windows</em> it also skips the folders the system keeps for itself (<code>$RECYCLE.BIN</code>, <code>System Volume Information</code>, <code>Config.Msi</code>), the ones sitting in the root of every drive: they aren't yours, and comparing them says nothing about your backup. The name is what counts: a folder of yours named like that would be skipped all the same. This is about comparing, not about copying: drag a folder that contains one of these and it is copied whole — copying a folder has to give you the folder, not a version of it with pieces missing.</p>
     <h3>How reliable is the Deep Comparison?</h3>
-    <p>Very. GEMINUS reads the contents of both files from beginning to end: if they differ by even one byte, it sees it. The case where two different files are declared identical is so improbable that it won't happen in any human lifetime.</p>
+    <p>Very. DiskTwins reads the contents of both files from beginning to end: if they differ by even one byte, it sees it. The case where two different files are declared identical is so improbable that it won't happen in any human lifetime.</p>
   `,
 };
 
@@ -2541,7 +2544,7 @@ sudo mount /dev/sdX1 /mnt/mydisk</code></pre>
 const ONBOARDING_CONTENT_IT = {
   1: `
     <div class="onboarding-icon">💾 ⇌ 💾</div>
-    <div class="onboarding-step-title">Cos'è GEMINUS</div>
+    <div class="onboarding-step-title">Cos'è DiskTwins</div>
     <div class="onboarding-step-text">
       Confronta due dischi o cartelle e ti dice esattamente cosa è uguale, cosa è cambiato, cosa esiste solo da una parte. Puoi confrontare due USB, una cartella e un disco, o qualsiasi combinazione.<br><br>
       Niente cloud, niente sincronizzazione automatica: decidi tu cosa fare con i risultati.
@@ -2564,7 +2567,7 @@ const ONBOARDING_CONTENT_IT = {
       </div>
     </div>
     <div class="onboarding-step-text">
-      Quando clicchi <strong>▶ Confronta</strong>, GEMINUS ti chiede quale metodo usare. <strong>Veloce</strong> è rapido ma non legge il contenuto. <strong>Approfondito</strong> legge tutto byte per byte. <strong>Completo</strong> aggiunge la verifica fisica dei dischi.
+      Quando clicchi <strong>▶ Confronta</strong>, DiskTwins ti chiede quale metodo usare. <strong>Veloce</strong> è rapido ma non legge il contenuto. <strong>Approfondito</strong> legge tutto byte per byte. <strong>Completo</strong> aggiunge la verifica fisica dei dischi.
     </div>
   `,
   3: `
@@ -2580,7 +2583,7 @@ const ONBOARDING_CONTENT_IT = {
 const ONBOARDING_CONTENT_EN = {
   1: `
     <div class="onboarding-icon">💾 ⇌ 💾</div>
-    <div class="onboarding-step-title">What GEMINUS is</div>
+    <div class="onboarding-step-title">What DiskTwins is</div>
     <div class="onboarding-step-text">
       Compares two disks or folders and tells you exactly what is identical, what has changed, what exists on only one side. You can compare two USB drives, a folder and a disk, or any combination.<br><br>
       No cloud, no automatic sync: you decide what to do with the results.
@@ -2603,7 +2606,7 @@ const ONBOARDING_CONTENT_EN = {
       </div>
     </div>
     <div class="onboarding-step-text">
-      When you click <strong>▶ Compare</strong>, GEMINUS asks which method to use. <strong>Quick</strong> is fast but doesn't read content. <strong>Deep</strong> reads every byte. <strong>Full</strong> adds physical disk health verification.
+      When you click <strong>▶ Compare</strong>, DiskTwins asks which method to use. <strong>Quick</strong> is fast but doesn't read content. <strong>Deep</strong> reads every byte. <strong>Full</strong> adds physical disk health verification.
     </div>
   `,
   3: `
@@ -3537,7 +3540,7 @@ async function onDrop(e, toSide, targetRelPath, targetIsDir, targetAbsent, force
   const baseName = srcRel.split('/').pop();
 
   // Pure mirror: the destination is always the same position on the other
-  // side, wherever the item was dropped. GEMINUS aligns the two disks, it does
+  // side, wherever the item was dropped. DiskTwins aligns the two disks, it does
   // not rearrange them — free placement is what nested a folder inside its own
   // twin.
   const item = { relPath: srcRel, isDir: dragInfo.isDir, bytes: dragInfo.bytes };
@@ -5413,7 +5416,7 @@ document.addEventListener('keydown', (e) => {
 });
 
 // ══════════════════════════════════════════════════════════
-// SCHEDULER: jobs that run while GEMINUS is open (also minimised)
+// SCHEDULER: jobs that run while DiskTwins is open (also minimised)
 // ══════════════════════════════════════════════════════════
 const SCHED_DAYS = ['mon','tue','wed','thu','fri','sat','sun'];
 let _jobs = [];
@@ -5620,7 +5623,7 @@ async function schedRunNow(id, auto) {
 }
 
 // The clock: every half minute, whatever is due runs, one at a time. A job
-// that came due while GEMINUS was closed runs once when it opens.
+// that came due while DiskTwins was closed runs once when it opens.
 async function schedTick() {
   if (_schedRunning || operating || comparing || _diagRunning) return;
   const now = Math.floor(Date.now() / 1000);
