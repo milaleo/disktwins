@@ -34,7 +34,7 @@ Compare two disks or folders on Linux and Windows — find differences, copy, mo
 
 ## The idea
 
-A NAS costs money, and it has to be kept running. Two external drives cost far less and ask for nothing. DiskTwins, the original project, was born from this simple idea: one working drive and one backup drive, brought in line when you decide, with no dedicated hardware and no system to administer. DiskTwins is not a NAS — it is a tool for those who want to know exactly what has changed between two drives or folders, and act accordingly.
+A NAS costs money, and it has to be kept running. Two external drives cost far less and ask for nothing. GEMINUS, the original project DiskTwins is based on, was born from this simple idea: one working drive and one backup drive, brought in line when you decide, with no dedicated hardware and no system to administer. DiskTwins is not a NAS — it is a tool for those who want to know exactly what has changed between two drives or folders, and act accordingly.
 
 Choose two paths. DiskTwins compares them file by file. You see the differences. You copy, move, or delete what you want.
 
@@ -48,7 +48,7 @@ You pick the method that fits the moment. Everyday sync? Quick. Important backup
 
 When it encounters an unreadable file on a damaged drive, DiskTwins does not stop — it marks it with a warning and completes the comparison. You know exactly what could not be read.
 
-DiskTwins, the original project, is an open source project born from a personal need. Anyone can contribute — with the same practical spirit with which it was built.
+GEMINUS, the original project, is an open source project born from a personal need. Anyone can contribute — with the same practical spirit with which it was built.
 
 ---
 
@@ -120,7 +120,7 @@ Confronta due dischi o cartelle su Linux e Windows — trova le differenze, copi
 
 ## DiskTwins — Castore e Polluce
 
-Un NAS costa, e va tenuto in piedi. Due dischi esterni costano molto meno e non chiedono niente. DiskTwins, il progetto originale, nasce da questa idea semplice: un disco di lavoro e un disco di backup, allineati quando lo decidi tu, senza hardware dedicato e senza un sistema da amministrare. DiskTwins non è un NAS — è uno strumento per chi vuole sapere esattamente cosa è cambiato tra due dischi o cartelle, e agire di conseguenza.
+Un NAS costa, e va tenuto in piedi. Due dischi esterni costano molto meno e non chiedono niente. GEMINUS, il progetto originale su cui si basa DiskTwins, nasce da questa idea semplice: un disco di lavoro e un disco di backup, allineati quando lo decidi tu, senza hardware dedicato e senza un sistema da amministrare. DiskTwins non è un NAS — è uno strumento per chi vuole sapere esattamente cosa è cambiato tra due dischi o cartelle, e agire di conseguenza.
 
 Scegli due percorsi. DiskTwins li confronta file per file. Vedi le differenze. Copi, sposti o cancelli quello che vuoi.
 
@@ -134,7 +134,7 @@ Scegli il metodo che fa al caso tuo. Sincronizzazione quotidiana? Veloce. Backup
 
 Quando incontra un file illeggibile su un disco danneggiato, DiskTwins non si blocca — lo marca con un avviso e porta a termine il confronto. Sai esattamente cosa non è stato possibile leggere.
 
-DiskTwins, il progetto originale, è un progetto open source nato da un'esigenza personale. Chiunque può contribuire — con lo stesso spirito pratico con cui è stato costruito.
+GEMINUS, il progetto originale, è un progetto open source nato da un'esigenza personale. Chiunque può contribuire — con lo stesso spirito pratico con cui è stato costruito.
 
 ---
 
