@@ -40,6 +40,7 @@ jobs:
         uses: softprops/action-gh-release@v2
         with:
           tag_name: disktwins-preview-${{ github.run_number }}
+          target_commitish: ${{ github.sha }}
           name: DiskTwins preview ${{ github.run_number }}
           prerelease: true
           body: |
